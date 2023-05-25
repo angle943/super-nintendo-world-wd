@@ -1,48 +1,78 @@
 let cardData = [
   {
-    title: "Show 2 Name",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
+    title: {
+      front: "Show Name",
+      back: "",
+    },
+    description: {
+      front:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
+      back: "",
+    },
     img: {
-      src: "/assets/bowser-castle.jpg",
-      alt: "",
+      front: {
+        src: "/assets/bowser-castle.jpg",
+        alt: "",
+      },
     },
     category: "shows",
     misc: {},
   },
   {
-    title: "Resorts 2 Name",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
-    img: {
-      src: "/assets/bowser-castle.jpg",
-      alt: "",
+    title: {
+      front: "Attraction Name",
+      back: "",
     },
-
+    description: {
+      front:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
+      back: "",
+    },
+    img: {
+      front: {
+        src: "/assets/bowser-castle.jpg",
+        alt: "",
+      },
+    },
+    category: "attractions",
+    misc: {},
+  },
+  {
+    title: {
+      front: "Resort Name",
+      back: "",
+    },
+    description: {
+      front:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
+      back: "",
+    },
+    img: {
+      front: {
+        src: "/assets/bowser-castle.jpg",
+        alt: "",
+      },
+    },
     category: "resorts",
     misc: {},
   },
   {
-    title: "Dining 2 Name",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
-    img: {
-      src: "/assets/bowser-castle.jpg",
-      alt: "",
+    title: {
+      front: "Restaurant Name",
+      back: "",
     },
-
+    description: {
+      front:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
+      back: "",
+    },
+    img: {
+      front: {
+        src: "/assets/bowser-castle.jpg",
+        alt: "",
+      },
+    },
     category: "dining",
-    misc: {},
-  },
-  {
-    title: "Attractions 2 Name",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
-    img: {
-      src: "/assets/bowser-castle.jpg",
-      alt: "",
-    },
-    category: "attractions",
     misc: {},
   },
 ];

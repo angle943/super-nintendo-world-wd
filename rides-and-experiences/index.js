@@ -49,16 +49,16 @@ class RidesAndExperiences {
 
     if (btn.classList.contains("link2")) {
       btn.parentNode.classList.toggle("FilterOn");
-      category = btn.childNodes[0].textContent.toLowerCase();
-      this.filters[category] = this.filters[category] ? false : true;
+      category = btn.childNodes[0].textContent;
+      this.filters[category] = !this.filters[category];
     }
     if (
       btn.childNodes[SPAN_INDEX] &&
       btn.childNodes[SPAN_INDEX].classList.contains("link2")
     ) {
       btn.childNodes[SPAN_INDEX].classList.toggle("FilterOn");
-      category = btn.childNodes[1].textContent.toLowerCase();
-      this.filters[category] = this.filters[category] ? false : true;
+      category = btn.childNodes[1].textContent;
+      this.filters[category] = !this.filters[category];
     }
 
     this.filterCards();
@@ -72,26 +72,56 @@ class RidesAndExperiences {
     let cards = [];
     for (let data of this.cardData) {
       let card = document.createElement("div");
-      let cardImg = document.createElement("img");
-      let cardInfo = document.createElement("div");
-      let cardHead = document.createElement("h5");
-      let cardBody = document.createElement("p");
+
+      let cardFront = document.createElement("div");
+      let cardFrontImg = document.createElement("img");
+      let cardFrontInfo = document.createElement("div");
+      let cardFrontHead = document.createElement("h5");
+      let cardFrontBody = document.createElement("p");
+
+      let cardBack = document.createElement("div");
+      // let cardBackImg = document.createElement("img");
+      let cardBackInfo = document.createElement("div");
+      let cardBackHead = document.createElement("h5");
+      let cardBackBody = document.createElement("p");
 
       card.classList.add("Card");
-      cardImg.classList.add("CardImg");
-      cardInfo.classList.add("CardInfo");
-      cardHead.classList.add("CardHead");
-      cardBody.classList.add("CardBody");
 
-      card.appendChild(cardImg);
-      card.appendChild(cardInfo);
-      cardInfo.appendChild(cardHead);
-      cardInfo.appendChild(cardBody);
+      cardFront.classList.add("CardFront");
+      cardFrontImg.classList.add("CardFrontImg");
+      cardFrontInfo.classList.add("CardFrontInfo");
+      cardFrontHead.classList.add("CardFrontHead");
+      cardFrontBody.classList.add("CardFrontBody");
 
-      cardImg.src = data.img.src;
-      cardImg.alt = data.img.alt;
-      cardHead.textContent = data.title;
-      cardBody.textContent = data.description;
+      cardBack.classList.add("CardBack");
+      // cardBackImg.classList.add("CardBackImg");
+      cardBackInfo.classList.add("CardBackInfo");
+      cardBackHead.classList.add("CardBackHead");
+      cardBackBody.classList.add("CardBackBody");
+
+      cardFront.appendChild(cardFrontImg);
+      cardFront.appendChild(cardFrontInfo);
+      cardFrontInfo.appendChild(cardFrontHead);
+      cardFrontInfo.appendChild(cardFrontBody);
+
+      // cardBack.appendChild(cardBackImg);
+      cardBack.appendChild(cardBackInfo);
+      cardBackInfo.appendChild(cardBackHead);
+      cardBackInfo.appendChild(cardBackBody);
+
+      cardFrontInfo.appendChild(this.plus("Front"));
+      cardBackInfo.appendChild(this.plus("Back"));
+
+      card.appendChild(cardFront);
+      card.appendChild(cardBack);
+
+      cardFrontImg.src = data.img.front.src;
+      cardFrontImg.alt = data.img.front.alt;
+      cardFrontHead.textContent = data.title.front;
+      cardFrontBody.textContent = data.description.front;
+
+      cardBackHead.textContent = data.title.back;
+      cardBackBody.textContent = data.description.back;
 
       card.dataset.category = data.category;
 
@@ -105,11 +135,12 @@ class RidesAndExperiences {
   /* ****************************** */
 
   filterCards = () => {
+    let isFilterOff = Object.values(this.filters).every(
+      (filter) => filter == false
+    );
     let cards = this.createCards().filter((card) => {
       let type = card.dataset.category;
-      if (Object.values(this.filters).every((card) => card == false))
-        return true;
-      return this.filters[type];
+      return isFilterOff || this.filters[type];
     });
 
     let cardContainer = document.querySelector(".CardsContainer");
@@ -122,9 +153,23 @@ class RidesAndExperiences {
     result.textContent = cards.length + " results";
     result2.textContent = cards.length + " results";
   };
+
+  plus = (side) => {
+    let circle = document.createElement("button");
+    circle.classList.add(`Card${side}PlusIcon`);
+
+    circle.addEventListener("click", () => {
+      let card = circle.parentNode.parentNode.parentNode;
+      card.classList.toggle("CardFlip");
+    });
+    circle.ariaLabel = "See more";
+    return circle;
+  };
 }
 
 window.onload = function () {
   let c = new RidesAndExperiences(cardData);
   c.init();
 };
+
+//
