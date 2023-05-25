@@ -1,11 +1,11 @@
-.CardsContainer {
+.cardsContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 2.5rem;
   grid-area: cards;
 }
 
-.Card {
+.card {
   background: transparent;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
@@ -20,13 +20,13 @@
   height: 494px; /* TODO should be more flexible */
 }
 
-.CardFrontImg,
-.CardBackImg {
+.cardFrontImg,
+.cardBackImg {
   border-radius: 8px 8px 0 0;
 }
 
-.CardFrontInfo,
-.CardBackInfo {
+.cardFrontInfo,
+.cardBackInfo {
   padding: 1.5rem;
   height: auto;
 
@@ -34,25 +34,25 @@
   grid-template-rows: auto repeat(2, 1fr);
 }
 
-.CardBackInfo {
+.cardBackInfo {
   height: 98.5%; // adjustment to align with front button
 }
 
-.CardFrontHead,
-.CardBackHead {
+.cardFrontHead,
+.cardBackHead {
   color: var(--color-primary);
   margin-bottom: 0.75rem;
 }
 
-.CardFrontPlusIcon,
-.CardBackPlusIcon {
+.cardFrontPlusIcon,
+.cardBackPlusIcon {
   font-size: 1.5rem;
   align-self: flex-end;
   margin-left: auto;
 }
 
-.CardBackPlusIcon::after,
-.CardFrontPlusIcon::after {
+.cardBackPlusIcon::after,
+.cardFrontPlusIcon::after {
   content: "+";
 
   color: var(--color-neutral-white);
@@ -61,19 +61,19 @@
   padding: 0 0.25rem;
 }
 
-.CardBackPlusIcon::after {
+.cardBackPlusIcon::after {
   content: "-";
   background-color: var(--color-neutral-white);
   color: var(--color-primary);
   padding: 0 0.5rem;
 }
 
-.CardFlip {
+.cardFlip {
   transform: rotateY(180deg);
 }
 
-.CardFront,
-.CardBack {
+.cardFront,
+.cardBack {
   background: white;
   border-radius: 0 0 8px 8px;
   backface-visibility: hidden;
@@ -84,7 +84,7 @@
   position: absolute;
 }
 
-.CardBack {
+.cardBack {
   border-radius: 0.5rem;
   transform: rotateY(180deg);
 

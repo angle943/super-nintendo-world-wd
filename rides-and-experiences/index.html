@@ -20,63 +20,31 @@
   <body>
     <!-- Rides And Experiences -->
 
-    <section class="ExperiencesWrapper">
-      <div class="Experiences">
-        <h2 class="ExperiencesHead">Rides & Experiences</h2>
+    <section class="experiencesWrapper">
+      <div class="experiences">
+        <h2 class="experiencesHead">Rides & Experiences</h2>
 
-        <div class="ExperiencesTopSection">
+        <div class="experiencesTopSection">
           <p class="pFilter p1">results</p>
-          <button class="BtnFilterMain">
-            <span class="link2">Filters</span>
-          </button>
+          <button class="btnFilterMain link2">filters</button>
         </div>
 
-        <div class="BtnFilters">
+        <div class="btnFilters">
           <p class="pFilter2 p1">results</p>
-          <button class="BtnFilter">
-            <span class="link2">attractions</span>
+          <button data-filter="all" class="btnFilter link2 filterOn">
+            all
           </button>
-          <button class="BtnFilter">
-            <span class="link2">dining</span>
+          <button data-filter="attractions" class="btnFilter link2">
+            attractions
           </button>
-          <button class="BtnFilter offset">
-            <span class="link2">resorts</span>
+          <button data-filter="dining" class="btnFilter link2">dining</button>
+          <button data-filter="resorts" class="btnFilter link2 offset">
+            resorts
           </button>
-          <button class="BtnFilter">
-            <span class="link2">shows</span>
-          </button>
+          <button data-filter="shows" class="btnFilter link2">shows</button>
         </div>
 
-        <div class="CardsContainer">
-          <!-- <div class="Card">
-
-               <div class="front">
-               <img class="CardImg" src="/assets/bowser-castle.jpg" />
-               <div class="CardInfo">
-               <h3 class="CardHead">Front Card</h3>
-               <p class="p3">
-               Lorem Ipsum is simply dummy text of the printing and
-               typesetting industry. Lorem Ipsum has been the industry's
-               took a galley of type and scrambled it
-               </p>
-               </div>
-               </div>
-
-               <div class="back">
-               <img class="CardImg" src="/assets/bowser-castle.jpg" />
-               <div class="CardInfo">
-               <h3 class="CardHead">Back Card</h3>
-               <p class="p3">
-               Lorem Ipsum is simply dummy text of the printing and
-               typesetting industry. Lorem Ipsum has been the industry's
-               took a galley of type and scrambled it
-               </p>
-               </div>
-               </div>
-	  -->
-
-          </div>
-        </div>
+        <div class="cardsContainer"></div>
       </div>
     </section>
   </body>

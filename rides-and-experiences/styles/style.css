@@ -9,11 +9,11 @@ p {
   display: none;
 }
 
-.ExperiencesWrapper {
+.experiencesWrapper {
   display: flex;
   justify-content: center;
 }
-.Experiences {
+.experiences {
   display: grid;
 
   grid-template: 3.75rem repeat(4, auto) 3.75rem / 1.25rem 21rem 1.25rem;
@@ -27,7 +27,7 @@ p {
 }
 
 @media only screen and (min-width: 56rem) {
-  .Experiences {
+  .experiences {
     grid-template: 5rem repeat(4, auto) 5rem / 1fr 45rem 1fr;
     grid-template-areas:
       ". . ."
@@ -40,7 +40,7 @@ p {
 }
 
 @media only screen and (min-width: 77rem) {
-  .Experiences {
+  .experiences {
     grid-template: 5rem repeat(4, auto) 5rem / 1fr 72.5rem 1fr;
     grid-template-areas:
       ". . ."
@@ -57,13 +57,13 @@ p {
   }
 }
 
-.ExperiencesHead {
+.experiencesHead {
   margin-bottom: 1.25rem;
 
   grid-area: head;
 }
 
-.ExperiencesTopSection {
+.experiencesTopSection {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.25rem;
@@ -72,7 +72,7 @@ p {
 }
 
 @media only screen and (min-width: 77rem) {
-  .ExperiencesTopSection {
+  .experiencesTopSection {
     display: none;
   }
 }
@@ -82,8 +82,8 @@ p {
   align-self: center;
 }
 
-.BtnFilterMain,
-.BtnFilter {
+.btnFilterMain,
+.btnFilter {
   font-weight: var(--font-weight-semi-bold);
   text-transform: capitalize;
 
@@ -95,23 +95,23 @@ p {
   outline: none;
 }
 
-.BtnFilters {
+.btnFilters {
   margin: 0 0.75rem;
   grid-area: filters;
 
   display: none;
 }
 
-.BtnFilter {
+.btnFilter {
   margin-bottom: 1rem;
   margin: 0 0.5rem 1rem;
 }
 
-.FilterOn {
+.filterOn {
   background-color: var(--color-primary);
   color: var(--color-neutral-white);
 }
 
-.Filters {
+.filters {
   display: block;
 }

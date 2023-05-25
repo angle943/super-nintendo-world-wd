@@ -4,6 +4,7 @@ class RidesAndExperiences {
   constructor(cardData) {
     this.cardData = cardData;
     this.filters = {
+      all: true,
       attractions: false,
       dining: false,
       resorts: false,
@@ -16,8 +17,8 @@ class RidesAndExperiences {
   /* ********************** */
 
   init = () => {
-    let btnFilters = document.getElementsByClassName("BtnFilter");
-    let btnFilterMain = document.querySelector(".BtnFilterMain");
+    let btnFilters = document.getElementsByClassName("btnFilter");
+    let btnFilterMain = document.querySelector(".btnFilterMain");
     for (let btn of btnFilters) {
       btn.addEventListener("click", this.handleBtnFilter);
     }
@@ -30,8 +31,8 @@ class RidesAndExperiences {
   /* ******************************************** */
 
   handleBtnFilterMain = () => {
-    let btnFilters = document.querySelector(".BtnFilters");
-    btnFilters.classList.toggle("Filters");
+    let btnFilters = document.querySelector(".btnFilters");
+    btnFilters.classList.toggle("filters");
   };
 
   /* ********************************************************** */
@@ -39,38 +40,31 @@ class RidesAndExperiences {
   /* ********************************************************** */
 
   handleBtnFilter = (e) => {
-    const SPAN_INDEX = 1;
     let { target: btn } = e;
-    let category;
+    let btnFilters = document.getElementsByClassName("btnFilter");
 
-    btn.classList.toggle("FilterOn");
-
-    // Handle span element inside button
-
-    if (btn.classList.contains("link2")) {
-      btn.parentNode.classList.toggle("FilterOn");
-      category = btn.childNodes[0].textContent;
-      this.filters[category] = !this.filters[category];
+    // Clear buttons
+    for (let btn of btnFilters) {
+      if (btn.classList.contains("filterOn")) {
+        btn.classList.remove("filterOn");
+        this.filters[btn.dataset.filter] = false;
+      }
     }
-    if (
-      btn.childNodes[SPAN_INDEX] &&
-      btn.childNodes[SPAN_INDEX].classList.contains("link2")
-    ) {
-      btn.childNodes[SPAN_INDEX].classList.toggle("FilterOn");
-      category = btn.childNodes[1].textContent;
-      this.filters[category] = !this.filters[category];
-    }
-
+    btn.classList.add("filterOn");
+    this.filters[btn.dataset.filter] = true;
     this.filterCards();
   };
 
-  /* *********************** */
-  /* Create card components. */
-  /* *********************** */
+  /* ********************************** */
+  /* Filter and Create card components. */
+  /* ********************************** */
 
   createCards = () => {
     let cards = [];
     for (let data of this.cardData) {
+      if (!this.filters[data.category] && !this.filters.all) {
+        continue;
+      }
       let card = document.createElement("div");
 
       let cardFront = document.createElement("div");
@@ -80,31 +74,28 @@ class RidesAndExperiences {
       let cardFrontBody = document.createElement("p");
 
       let cardBack = document.createElement("div");
-      // let cardBackImg = document.createElement("img");
       let cardBackInfo = document.createElement("div");
       let cardBackHead = document.createElement("h5");
       let cardBackBody = document.createElement("p");
 
-      card.classList.add("Card");
+      card.classList.add("card");
 
-      cardFront.classList.add("CardFront");
-      cardFrontImg.classList.add("CardFrontImg");
-      cardFrontInfo.classList.add("CardFrontInfo");
-      cardFrontHead.classList.add("CardFrontHead");
-      cardFrontBody.classList.add("CardFrontBody");
+      cardFront.classList.add("cardFront");
+      cardFrontImg.classList.add("cardFrontImg");
+      cardFrontInfo.classList.add("cardFrontInfo");
+      cardFrontHead.classList.add("cardFrontHead");
+      cardFrontBody.classList.add("cardFrontBody");
 
-      cardBack.classList.add("CardBack");
-      // cardBackImg.classList.add("CardBackImg");
-      cardBackInfo.classList.add("CardBackInfo");
-      cardBackHead.classList.add("CardBackHead");
-      cardBackBody.classList.add("CardBackBody");
+      cardBack.classList.add("cardBack");
+      cardBackInfo.classList.add("cardBackInfo");
+      cardBackHead.classList.add("cardBackHead");
+      cardBackBody.classList.add("cardBackBody");
 
       cardFront.appendChild(cardFrontImg);
       cardFront.appendChild(cardFrontInfo);
       cardFrontInfo.appendChild(cardFrontHead);
       cardFrontInfo.appendChild(cardFrontBody);
 
-      // cardBack.appendChild(cardBackImg);
       cardBack.appendChild(cardBackInfo);
       cardBackInfo.appendChild(cardBackHead);
       cardBackInfo.appendChild(cardBackBody);
@@ -131,19 +122,13 @@ class RidesAndExperiences {
   };
 
   /* ****************************** */
-  /* Filter cards and attach to DOM */
+  /* Attach cards to DOM */
   /* ****************************** */
 
   filterCards = () => {
-    let isFilterOff = Object.values(this.filters).every(
-      (filter) => filter == false
-    );
-    let cards = this.createCards().filter((card) => {
-      let type = card.dataset.category;
-      return isFilterOff || this.filters[type];
-    });
+    let cards = this.createCards();
 
-    let cardContainer = document.querySelector(".CardsContainer");
+    let cardContainer = document.querySelector(".cardsContainer");
     let result = document.querySelector(".pFilter");
     let result2 = document.querySelector(".pFilter2");
     cardContainer.innerHTML = "";
@@ -156,11 +141,11 @@ class RidesAndExperiences {
 
   plus = (side) => {
     let circle = document.createElement("button");
-    circle.classList.add(`Card${side}PlusIcon`);
+    circle.classList.add(`card${side}PlusIcon`);
 
     circle.addEventListener("click", () => {
       let card = circle.parentNode.parentNode.parentNode;
-      card.classList.toggle("CardFlip");
+      card.classList.toggle("cardFlip");
     });
     circle.ariaLabel = "See more";
     return circle;
