@@ -139,23 +139,16 @@ class RidesAndExperiences {
 
       cardFrontInfo.appendChild(cardFrontImg);
       cardFront.appendChild(cardFrontInfo);
-      // cardFrontInfo.appendChild(cardFrontHead);
-      // cardFrontInfo.appendChild(cardFrontBody);
       cardFrontInfo.appendChild(cardFrontBottomContainer);
       cardFrontBottomContainer.appendChild(cardFrontHead);
       cardFrontBottomContainer.appendChild(cardFrontBody);
 
       cardBack.appendChild(cardBackInfo);
-      // cardBackInfo.appendChild(cardBackHead);
-      // cardBackInfo.appendChild(cardBackBody);
-      cardBackInfo.appendChild(cardBackBottomContainer);
-      cardBackBottomContainer.appendChild(cardBackHead);
-      cardBackBottomContainer.appendChild(cardBackBody);
+      cardBackInfo.appendChild(cardBackHead);
+      cardBackInfo.appendChild(cardBackBody);
 
-      // cardFrontInfo.appendChild(this.plus("Front"));
-      // cardBackInfo.appendChild(this.plus("Back"));
+      cardBackInfo.appendChild(this.plus("Back"));
       cardFrontBottomContainer.appendChild(this.plus("Front"));
-      cardBackBottomContainer.appendChild(this.plus("Back"));
 
       card.appendChild(cardFront);
       card.appendChild(cardBack);
@@ -198,7 +191,12 @@ class RidesAndExperiences {
     circle.classList.add(`card${side}PlusIcon`);
 
     circle.addEventListener("click", () => {
-      let card = circle.parentNode.parentNode.parentNode.parentNode;
+      let card;
+      if (side == "Back") {
+        card = circle.parentNode.parentNode.parentNode;
+      } else {
+        card = circle.parentNode.parentNode.parentNode.parentNode;
+      }
       card.classList.toggle("cardFlip");
     });
 

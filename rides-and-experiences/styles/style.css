@@ -101,16 +101,13 @@ p {
 
 .btnFilter {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .filters {
   grid-area: filters;
 
   display: none;
-}
-
-.btnFilter {
-  margin-bottom: 1rem;
 }
 
 .filterOn {
@@ -181,6 +178,6 @@ p {
   }
 }
 
-.characters {
+.charactersImg {
   max-width: 350px;
 }
