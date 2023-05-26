@@ -30,7 +30,7 @@
   height: inherit;
 
   display: grid;
-  grid-template-rows: auto repeat(2, 1fr);
+  grid-template-rows: 0fr 1fr;
 }
 
 .cardFrontHead {
@@ -108,7 +108,7 @@
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
 
   padding: 1.5rem;
-  padding-bottom: 2.15rem;
+  /* padding-bottom: 2.15rem; */
 }
 
 @keyframes pulse-red {
