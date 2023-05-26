@@ -2,12 +2,12 @@ let cardData = [
   {
     title: {
       front: "Show Name",
-      back: "",
+      back: "Rides and Experiences",
     },
     description: {
       front:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
-      back: "",
+        "Lorem ipsum dolor sit amet, usu ne veri ullum argumentum, tempor iriure ex per. Tritani placerat perfecto pri ut. Ad sit prompta sententiae.",
+      back: "Lorem ipsum dolor sit amet, usu ne veri ullum argumentum, tempor iriure ex per. Tritani placerat perfecto pri ut. Ad sit prompta sententiae.",
     },
     img: {
       front: {
@@ -16,17 +16,16 @@ let cardData = [
       },
     },
     category: "shows",
-    misc: {},
   },
   {
     title: {
       front: "Attraction Name",
-      back: "",
+      back: "Rides and Experiences",
     },
     description: {
       front:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
-      back: "",
+        "Lorem ipsum dolor sit amet, usu ne veri ullum argumentum, tempor iriure ex per. Tritani placerat perfecto pri ut. Ad sit prompta sententiae.",
+      back: "Lorem ipsum dolor sit amet, usu ne veri ullum argumentum, tempor iriure ex per. Tritani placerat perfecto pri ut. Ad sit prompta sententiae.",
     },
     img: {
       front: {
@@ -35,17 +34,16 @@ let cardData = [
       },
     },
     category: "attractions",
-    misc: {},
   },
   {
     title: {
       front: "Resort Name",
-      back: "",
+      back: "Rides and Experiences",
     },
     description: {
       front:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
-      back: "",
+        "Lorem ipsum dolor sit amet, usu ne veri ullum argumentum, tempor iriure ex per. Tritani placerat perfecto pri ut. Ad sit prompta sententiae.",
+      back: "Lorem ipsum dolor sit amet, usu ne veri ullum argumentum, tempor iriure ex per. Tritani placerat perfecto pri ut. Ad sit prompta sententiae.",
     },
     img: {
       front: {
@@ -54,17 +52,16 @@ let cardData = [
       },
     },
     category: "resorts",
-    misc: {},
   },
   {
     title: {
       front: "Restaurant Name",
-      back: "",
+      back: "Rides and Experiences",
     },
     description: {
       front:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's took a galley of type and scrambled it",
-      back: "",
+        "Lorem ipsum dolor sit amet, usu ne veri ullum argumentum, tempor iriure ex per. Tritani placerat perfecto pri ut. Ad sit prompta sententiae.",
+      back: "Lorem ipsum dolor sit amet, usu ne veri ullum argumentum, tempor iriure ex per. Tritani placerat perfecto pri ut. Ad sit prompta sententiae.",
     },
     img: {
       front: {
@@ -73,7 +70,6 @@ let cardData = [
       },
     },
     category: "dining",
-    misc: {},
   },
 ];
 

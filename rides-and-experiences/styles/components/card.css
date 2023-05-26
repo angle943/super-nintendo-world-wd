@@ -12,7 +12,7 @@
 
   position: relative;
 
-  transition: transform 0.8s;
+  transition: transform 0.3s;
   transform-style: preserve-3d;
   perspective: 500px;
 
@@ -27,20 +27,19 @@
 
 .cardFrontInfo,
 .cardBackInfo {
-  padding: 1.5rem;
-  height: auto;
+  height: inherit;
 
   display: grid;
   grid-template-rows: auto repeat(2, 1fr);
 }
 
-.cardBackInfo {
-  height: 98.5%; // adjustment to align with front button
+.cardFrontHead {
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
 }
 
-.cardFrontHead,
 .cardBackHead {
-  color: var(--color-primary);
+  color: var(--color-neutral-white);
   margin-bottom: 0.75rem;
 }
 
@@ -49,23 +48,32 @@
   font-size: 1.5rem;
   align-self: flex-end;
   margin-left: auto;
-}
 
-.cardBackPlusIcon::after,
-.cardFrontPlusIcon::after {
-  content: "+";
-
-  color: var(--color-neutral-white);
-  background-color: var(--color-primary);
   border-radius: 100%;
   padding: 0 0.25rem;
 }
 
-.cardBackPlusIcon::after {
-  content: "-";
+.cardBackPlusIcon > svg,
+.cardFrontPlusIcon > svg {
+  margin-bottom: -0.2rem;
+}
+
+.cardFrontPlusIcon {
+  background-color: var(--color-primary);
+  color: var(--color-neutral-white);
+}
+
+.cardFrontPlusIcon:hover {
+  animation: pulse-red 2s infinite;
+}
+
+.cardBackPlusIcon {
   background-color: var(--color-neutral-white);
   color: var(--color-primary);
-  padding: 0 0.5rem;
+}
+
+.cardBackPlusIcon:hover {
+  animation: pulse-white 2s infinite;
 }
 
 .cardFlip {
@@ -75,7 +83,7 @@
 .cardFront,
 .cardBack {
   background: white;
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px;
   backface-visibility: hidden;
 
   width: 100%;
@@ -84,9 +92,79 @@
   position: absolute;
 }
 
+.cardFront {
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+.cardFront:hover {
+  box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.45);
+  animation: pulse-shadow 0.5s;
+}
+
 .cardBack {
-  border-radius: 0.5rem;
   transform: rotateY(180deg);
 
   background-color: var(--color-primary);
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+  color: var(--color-neutral-white) !important;
+}
+
+.cardBack > .cardBottomContainer {
+  color: var(--color-neutral-white) !important;
+}
+
+@keyframes pulse-red {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(230, 0, 8, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(230, 0, 8, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(230, 0, 8, 0);
+  }
+}
+
+@keyframes pulse-white {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.cardBackBottomContainer,
+.cardFrontBottomContainer {
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto repeat(2, 1fr);
+}
+
+.cardBackBottomContainer {
+  grid-template-rows: repeat(2, auto) 1fr;
+  height: 100%;
 }

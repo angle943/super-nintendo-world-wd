@@ -21,6 +21,9 @@
     <!-- Rides And Experiences -->
 
     <section class="experiencesWrapper">
+      <!-- <dialog class="slider">
+           <div><button class="close">X</button></div>
+	   </dialog> -->
       <div class="experiences">
         <h2 class="experiencesHead">Rides & Experiences</h2>
 
@@ -29,8 +32,46 @@
           <button class="btnFilterMain link2">filters</button>
         </div>
 
-        <div class="btnFilters">
+        <!-- Mobile Version -->
+
+        <dialog class="dialog slider">
+          <button aria-label="cancel filter" class="btnDialog btnDialogClose">
+            <svg
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              height="1.875em"
+              width="1.875em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          <button data-filter="all" class="btnFilter link2 filterOn">
+            all
+          </button>
+          <button data-filter="attractions" class="btnFilter link2">
+            attractions
+          </button>
+          <button data-filter="dining" class="btnFilter link2">dining</button>
+          <button data-filter="resorts" class="btnFilter link2 offset">
+            resorts
+          </button>
+          <button data-filter="shows" class="btnFilter link2">shows</button>
+
+          <img class="characters" src="assets/characters.png" />
+          <button class="btnDailog btnDialogResults link2">show results</button>
+        </dialog>
+
+        <!-- Desktop version -->
+        <div class="filters">
           <p class="pFilter2 p1">results</p>
+
           <button data-filter="all" class="btnFilter link2 filterOn">
             all
           </button>
