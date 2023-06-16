@@ -1,0 +1,107 @@
+/**
+    styles exclusively used for the home (index) page
+*/
+.home__featured-section-wrapper {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.home__featured-section-header {
+    margin-bottom: 3rem;
+}
+
+.home__featured-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+}
+
+@media only screen and (max-width: 48rem) {
+    .home__featured-container {
+        gap: 3.25rem;
+    }
+}
+
+.home__feature {
+    display: grid;
+    grid-template-columns: 30rem 1fr;
+    grid-gap: 2rem;
+    justify-items: end;
+    width: 100%;
+}
+
+.home__feature--reversed {
+    grid-template-columns: 1fr 30rem;
+    border-radius: 10px;
+}
+
+.home__feature--reversed img {
+    border-radius: 1rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (max-width: 65rem) {
+    .home__feature {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 48rem) {
+    .home__feature {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        justify-items: flex-start;
+    }
+}
+
+.home__feature-image {
+    max-height: 20rem;
+    object-fit: cover;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.home__feature--reversed > .home__feature-image {
+    grid-column: 2 / span 1;
+}
+
+@media only screen and (max-width: 48rem) {
+    .home__feature-image {
+        grid-column: 1 / span 1 !important;
+    }
+}
+
+.home__feature-text-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    grid-column: 2 / span 1;
+}
+
+.home__feature--reversed > .home__feature-text-section {
+    grid-column: 1 / span 1;
+}
+
+@media only screen and (max-width: 48rem) {
+    .home__feature-text-section {
+        grid-column: 1 / span 1 !important;
+        grid-row: 2 / span 1;
+    }
+}
+
+.home__feature-text-section > * {
+    min-width: 0;
+}
+
+.home__text-alert {
+    color: var(--color-primary);
+}
+
+.home__learn-more-link {
+    color: var(--color-neutral-900);
+}
+
+.home__learn-more-link:hover {
+    color: var(--color-primary);
+}

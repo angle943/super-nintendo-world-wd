@@ -1,0 +1,250 @@
+/**
+    styles exclusively used for the rides & attractions page
+*/
+
+@keyframes ra-pulse-red {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(230, 0, 8, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(230, 0, 8, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(230, 0, 8, 0);
+    }
+}
+
+@keyframes ra-pulse-white {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.ra__hero-backdrop {
+    background-image: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.4) 60%,
+            rgba(0, 0, 0, 0) 100%
+    ),
+    url('/static/rides-and-attractions/splash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+}
+
+@media only screen and (max-width: 48rem) {
+    .ra__hero-backdrop {
+        background-image: linear-gradient(
+                180deg,
+                rgba(20, 20, 20, 0.1) 0%,
+                rgba(20, 20, 20, 0.3) 30%,
+                rgba(20, 20, 20, 0.7) 60%,
+                rgba(20, 20, 20, 0.9) 100%
+        ),
+        url('/static/rides-and-attractions/splash.jpg');
+        height: 20rem;
+    }
+}
+
+.ra__experiences-wrapper {
+    background: var(--color-neutral-100);
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+}
+
+.ra__experiences {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.ra__experiences-top-section {
+    align-items: center;
+    display: flex;
+}
+
+@media only screen and (max-width: 48rem) {
+    .ra__experiences-top-section {
+        gap: unset;
+        justify-content: space-between;
+    }
+}
+
+.ra__p-filter {
+    width: 9rem;
+}
+
+.ra__btn-filters {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.ra__btn-filter {
+    background-color: var(--color-neutral-300);
+    border-radius: 1rem;
+    color: var(--color-neutral-600);
+    padding: 0.75rem 1.5rem;
+    transition: all 150ms ease-in-out;
+}
+
+.ra__btn-filter:hover {
+    background-color: var(--color-neutral-900);
+    color: var(--color-neutral-white);
+}
+
+.ra__btn-filter-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 48rem) {
+    .ra__btn-filter {
+        display: none;
+    }
+
+    .ra__btn-filter-mobile {
+        display: block;
+    }
+}
+
+.ra__filter--on,
+.ra__filter--on:hover {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-white);
+}
+
+.ra__cards-container {
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 32rem;
+    grid-gap: 2.5rem;
+}
+
+@media only screen and (max-width: 77rem) {
+    .ra__cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 30rem;
+    }
+}
+
+@media only screen and (max-width: 48rem) {
+    .ra__cards-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 28rem;
+    }
+}
+
+.ra__card {
+    transition: all 300ms ease-in;
+    perspective: 60rem;
+}
+
+.ra__card:hover {
+    transform: scale(105%);
+}
+
+.ra__card-inner {
+    border-radius: 0.5rem;
+    background: var(--color-neutral-white);
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 800ms;
+    width: 100%;
+}
+
+.ra__show-back {
+    transform: rotateY(180deg);
+}
+
+.ra__card-front,
+.ra__card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* needed for Safari */
+    backface-visibility: hidden;
+}
+
+.ra__card-back {
+    border-radius: 0.5rem;
+    background-color: var(--color-primary);
+    transform: rotateY(180deg);
+    padding: 2rem;
+    display: flex;
+    height: 100%;
+}
+
+.ra__card-back > p {
+    color: var(--color-neutral-white);
+    flex: 1;
+}
+
+.ra__card-img {
+    border-radius: 0.5rem 0.5rem 0 0;
+    object-fit: cover;
+    max-height: 50%;
+    width: 100%;
+}
+
+.ra__card-info {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.5rem 4.375rem;
+    gap: 0.75rem;
+}
+
+.ra__card-head {
+    color: var(--color-primary);
+}
+
+.ra__card-more-button {
+    align-items: center;
+    align-self: flex-end;
+    border-radius: 50%;
+    bottom: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    height: 1.875rem;
+    justify-content: center;
+    position: absolute;
+    right: 1.25rem;
+    width: 1.875rem;
+}
+
+.ra__card-more-button-front {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-white);
+}
+
+.ra__card-more-button-front:hover {
+    animation: ra-pulse-red 2s infinite;
+}
+
+.ra__card-more-button-back {
+    background-color: var(--color-neutral-white);
+    color: var(--color-primary);
+}
+
+.ra__card-more-button-back:hover {
+    animation: ra-pulse-white 2s infinite;
+}

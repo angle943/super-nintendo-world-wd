@@ -1,0 +1,304 @@
+/**
+    style used for the desktop version of the header
+*/
+
+@keyframes header-bounce {
+    0% {
+        transform: scale(100%);
+    }
+    25% {
+        transform: scale(110%) rotate(5deg);
+    }
+    50% {
+        transform: scale(105%) rotate(-5deg);
+    }
+    75% {
+        transform: scale(110%) rotate(5deg);
+    }
+    100% {
+        transform: scale(100%) rotate(0deg);
+    }
+}
+
+.header__spacer {
+    height: var(--header-height);
+}
+
+@media only screen and (max-width: 65rem) {
+    .header__spacer {
+        height: var(--header-height-mobile);
+    }
+}
+
+.header__backdrop {
+    -webkit-backdrop-filter: blur(1rem) saturate(180%);
+    backdrop-filter: blur(1rem) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+@media only screen and (max-width: 65rem) {
+    .header__backdrop {
+        display: none;
+    }
+}
+
+.header {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: var(--header-height);
+    padding: 0.5rem 0;
+}
+
+.header__top-section {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__time {
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.header__top-right-button-group {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.header__top-right-button {
+    color: var(--color-neutral-900);
+    transition: all 300ms;
+}
+
+.header__top-right-button:hover {
+    color: var(--color-primary);
+}
+
+.header__bottom-section {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header__bottom-right-section {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.header__logo-link {
+    display: block;
+    position: absolute;
+    transform-origin: center;
+}
+
+.header__logo-link:hover {
+    animation-name: header-bounce;
+    animation-duration: 1s;
+}
+
+.header__popover-button-container {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+}
+
+/**
+    Style for the popover dialog
+ */
+.popover {
+    align-items: stretch;
+    background: var(--color-neutral-white);
+    border: none;
+    display: flex;
+    left: 50%;
+    margin: 0;
+    max-height: unset;
+    max-width: unset;
+    padding: 0;
+    top: 0;
+    transform: translateX(-50%);
+    width: 48rem;
+    transition: top 200ms ease-in-out;
+    visibility: hidden;
+}
+
+.popover[open] {
+    top: var(--header-height);
+    visibility: unset;
+}
+
+.popover::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popover-left__container {
+    background-color: var(--color-neutral-300);
+    padding: 2rem;
+    width: 50%;
+}
+
+.popover-left__nav-group-title {
+    color: var(--color-neutral-900);
+    margin-bottom: 1rem;
+}
+
+.popover-left__nav-group-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.popover-left__nav-group-link {
+    color: var(--color-primary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.popover-left__nav-group-link--fake {
+    color: var(--color-primary-dark);
+    cursor: default;
+    text-decoration: none !important;
+}
+
+.popover-left__nav-group-link:hover,
+.popover-left__nav-group-link:focus {
+    text-decoration: underline;
+}
+
+.popover-right__container {
+    padding: 0 2rem 2rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.popover-right__close-button {
+    align-items: center;
+    align-self: flex-end;
+    background: var(--color-neutral-400);
+    border-radius: 50%;
+    color: var(--color-neutral-white);
+    display: flex;
+    font-size: 1.25rem;
+    height: 1.5rem;
+    justify-content: center;
+    position: relative;
+    right: -1.5rem;
+    top: 0.5rem;
+    transition: all 300ms ease-out;
+    width: 1.5rem;
+}
+
+.popover-right__close-button:hover {
+    background: var(--color-neutral-700);
+}
+
+.popover-right__image {
+    border-radius: 1rem;
+    object-fit: cover;
+    height: 7rem;
+}
+
+.popover-right__link {
+    color: var(--color-neutral-900);
+}
+
+.popover-right__link:hover,
+.popover-right__link:active {
+    color: var(--color-primary);
+}
+
+.popover-right__link--fake {
+    color: var(--color-primary-dark);
+    cursor: default;
+    text-decoration: none !important;
+}
+
+.popover-right__link--fake:hover,
+.popover-right__link--fake:active {
+    color: var(--color-primary-dark);
+}
+
+/*
+    Styles for the popover button
+*/
+.popover-button {
+    align-items: center;
+    color: var(--color-neutral-800);
+    display: flex;
+    gap: 0.5rem;
+    transition: all 300ms;
+}
+
+.popover-button:hover {
+    color: var(--color-primary);
+}
+
+.popover-button--is-open {
+    color: var(--color-primary);
+}
+
+.popover-button__chevron {
+    transition: transform 300ms;
+    transform-origin: center;
+}
+
+.popover-button__chevron--is-open {
+    transform: rotate(180deg);
+}
+
+
+/*
+    Styles for the BUY NOW button
+ */
+.buy-now-button {
+    align-items: center;
+    background-color: var(--color-primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 1em 2em;
+    position: relative;
+    text-decoration: none;
+}
+
+.buy-now-button::before {
+    content: "";
+    display: block;
+    height: calc(100% - 2px);
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    transition: all 300ms ease-out 25ms;
+    width: calc(100% - 2px);
+    z-index: 1;
+}
+
+.buy-now-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.buy-now-button:hover::before {
+    background-color: var(--color-primary-dark);
+    height: calc(100% + 8px);
+    left: -4px;
+    top: -4px;
+    width: calc(100% + 8px);
+}
+
+.buy-now-button span {
+    color: var(--color-neutral-white);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    z-index: 2;
+}

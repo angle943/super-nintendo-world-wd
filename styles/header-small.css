@@ -1,0 +1,186 @@
+/**
+    style used for the mobile/tablet version of the header
+*/
+
+@keyframes header-small-bounce {
+    0% {
+        transform: translateX(-50%) scale(100%);
+    }
+    25% {
+        transform: translateX(-50%) scale(110%) rotate(5deg);
+    }
+    50% {
+        transform: translateX(-50%) scale(105%) rotate(-5deg);
+    }
+    75% {
+        transform: translateX(-50%) scale(110%) rotate(5deg);
+    }
+    100% {
+        transform: translateX(-50%) scale(100%) rotate(0deg);
+    }
+}
+
+.header-small {
+    -webkit-backdrop-filter: blur(1rem) saturate(180%);
+    align-items: stretch;
+    backdrop-filter: blur(1rem) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.7);
+    display: none;
+    flex-direction: row;
+    height: var(--header-height-mobile);
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 5;
+}
+
+@media only screen and (max-width: 65rem) {
+    .header-small {
+        display: flex;
+    }
+}
+
+.header-small__logo-link {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0.5rem;
+    transform: translateX(-50%);
+    transform-origin: center;
+    filter: drop-shadow(0 0.2rem 0.2rem var(--color-neutral-white));
+}
+
+.header-small__logo-link:focus,
+.header-small__logo-link:hover {
+    animation-name: header-small-bounce;
+    animation-duration: 1s;
+}
+
+.header-small__menu-button {
+    color: var(--color-neutral-900);
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: all 300ms;
+}
+
+.header-small__menu-button:hover {
+    color: var(--color-primary);
+}
+
+.header-small__slider {
+    background: var(--color-neutral-white);
+    border: none;
+    height: 100vh;
+    margin: 0;
+    max-height: unset;
+    max-width: unset;
+    padding: 0;
+    width: 100vw;
+    left: 100vw;
+    transition: left 200ms ease-in-out;
+}
+
+.header-small__slider--active {
+    left: 0;
+}
+
+.header-small__slider-header {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-small__slider-logo {
+    margin: 0.5rem;
+}
+
+.header-small__slider-close-button {
+    padding: 1rem;
+}
+
+.header-small__time {
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.header-small__time-open-container {
+    border-bottom: 1px solid var(--color-neutral-400);
+    padding: 1.5rem 1rem;
+}
+
+.header-small__menu-group {
+    align-items: center;
+    border-bottom: 1px solid var(--color-neutral-400);
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-semi-bold);
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+}
+
+.header-small__chevron {
+    transform-origin: center;
+    transition: all 300ms;
+}
+
+.header-small__chevron:hover,
+.header-small__chevron:focus {
+    color: var(--color-primary);
+}
+
+.header-small__menu-group--active > .header-small__chevron {
+    transform: rotate(180deg);
+}
+
+.header-small__nav-group-container {
+    background: var(--color-neutral-200);
+    height: 0;
+    transition: height 200ms ease-in;
+    overflow: hidden;
+}
+
+.header-small__menu-group--active#header-small__tickets-and-passes-button + .header-small__nav-group-container {
+    height: 9.625rem;
+}
+
+.header-small__menu-group--active#header-small__plan-your-visit-button + .header-small__nav-group-container {
+    height: 16rem;
+}
+
+.header-small__menu-group--active#header-small__things-to-do-button + .header-small__nav-group-container {
+    height: 11.75rem;
+}
+
+.header-small__menu-group--active#header-small__shop-now-button + .header-small__nav-group-container {
+    height: 13.875rem;
+}
+
+.header-small__nav-group {
+    display: flex;
+    margin: 2rem;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.header-small__nav-group-link {
+    color: var(--color-primary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header-small__nav-group-link:hover {
+    text-decoration: underline;
+}
+
+.header-small__nav-group-link--fake {
+    color: var(--color-primary-dark);
+    cursor: default;
+    text-decoration: none;
+}
+
+.header-small__nav-group-link--fake:hover {
+    text-decoration: none;
+}

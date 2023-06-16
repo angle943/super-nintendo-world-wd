@@ -5,9 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Welcome to the website for Super Nintendo World Theme Park!">
+    <meta name="description" content="Explore the various rides and attractions available at Super Nintendo World">
     <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
-    <title>Super Nintendo World!</title>
+    <title>Rides & Attractions - Super Nintendo World!</title>
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="./styles/globals.css">
@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="./styles/footer.css">
 
     <!-- Page-specific styles -->
-    <link rel="stylesheet" href="./styles/home.css">
-    <link rel="stylesheet" href="./styles/carousel.css">
+    <link rel="stylesheet" href="./styles/rides-and-attractions.css">
 
     <!-- Script tags. Uses 'defer' such that it is loaded after the DOM has been rendered -->
 
@@ -26,7 +25,8 @@
     <script src="./scripts/header-small.js" defer></script>
 
     <!-- page-specific scripts -->
-    <script src="./scripts/carousel.js" defer></script>
+    <script src="./scripts/ra-data.js" defer></script>
+    <script src="./scripts/rides-and-attractions.js" defer></script>
 </head>
 <body>
 
@@ -472,154 +472,46 @@
 <!-- Small header ends -->
 <!-- header ends -->
 
-<!-- Carousel begins -->
-<div class="carousel__container">
-    <div class="carousel" id="carousel">
+<!-- Hero section begins -->
+<div class="ra__hero-backdrop"></div>
+<!-- Hero section ends -->
 
-        <!-- first image -->
-        <div class="carousel__image carousel__image--0">
-            <div class="carousel__gradient">
-                <header class="container carousel__header">
-                    <h1 class="carousel__title">Let's a go!</h1>
-                    <p class="p1 carousel__description">
-                        Come experience the magical world of Nintendo!
-                        Explore the mushroom kingdom with Mario, scream
-                        through the haunted mansion with Luigi,
-                        and go on a barrel blast with Donkey Kong.
-                    </p>
+<!-- Rides & Experiences content begins -->
+<section class="ra__experiences-wrapper">
+    <div class="container ra__experiences">
+        <h2>Rides & Experiences</h2>
+        <div class="ra__experiences-top-section">
+            <p class="p1 ra__p-filter" id="ra__filter-count"></p>
 
-                    <a class="link1 link-with-chevron carousel__get-details-link" tabindex="0"
-                       href="/rides-and-attractions">
-                        <span>Get Details</span>
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" height="1.3em" width="1.3em"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </a>
-                </header>
+            <!-- filter buttons -->
+            <div class="ra__btn-filters">
+                <button class="link1 ra__btn-filter ra__filter--on" id="ra__button-all">
+                    All
+                </button>
+                <button class="link1 ra__btn-filter" id="ra__button-attractions">
+                    Attractions
+                </button>
+                <button class="link1 ra__btn-filter" id="ra__button-dining">
+                    Dining
+                </button>
+                <button class="link1 ra__btn-filter" id="ra__button-resorts">
+                    Resorts
+                </button>
+                <button class="link1 ra__btn-filter" id="ra__button-shows">
+                    Shows
+                </button>
+
+                <!-- mobile button -->
+                <button class="link1 ra__btn-filter ra__btn-filter-mobile" id="ra__button-filter-mobile">
+                    Filters
+                </button>
             </div>
         </div>
 
-        <!-- second image -->
-        <div class="carousel__image carousel__image--1">
-            <div class="carousel__gradient">
-                <header class="container carousel__header">
-                    <h1 class="carousel__title">Experience the dread</h1>
-                    <p class="p1 carousel__description">
-                        Join Samus as she hunts through the dangerous world of Brinstar in this BRAND NEW adventure.
-                    </p>
-
-                    <a class="link1 link-with-chevron carousel__get-details-link" tabindex="-1"
-                       href="/rides-and-attractions">
-                        <span>Get Details</span>
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" height="1.3em" width="1.3em"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </a>
-                </header>
-            </div>
-        </div>
-
-        <!-- second image -->
-        <div class="carousel__image carousel__image--2">
-            <div class="carousel__gradient">
-                <header class="container carousel__header">
-                    <h1 class="carousel__title">Mama Mia</h1>
-                    <p class="p1 carousel__description">
-                        Try out Princess Peach's cake and other desserts at the Peachy Bakery!
-                    </p>
-
-                    <a class="link1 link-with-chevron carousel__get-details-link" tabindex="-1"
-                       href="/rides-and-attractions">
-                        <span>Get Details</span>
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" height="1.3em" width="1.3em"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </a>
-                </header>
-            </div>
-        </div>
+        <div class="ra__cards-container" id="ra__cards-container"></div>
     </div>
-
-    <!-- Chevron buttons -->
-    <button class="carousel__chevron-button carousel__chevron-left" disabled id="carousel__chevron-left">
-        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-             stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-    </button>
-    <button class="carousel__chevron-button carousel__chevron-right" id="carousel__chevron-right">
-        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-             stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-    </button>
-
-    <!-- Carousel dots -->
-    <div class="carousel__dot-container" id="carousel__dot-container">
-        <button class="carousel__dot carousel__dot--active"></button>
-        <button class="carousel__dot" id="carousel__dot--1"></button>
-        <button class="carousel__dot" id="carousel__dot--2"></button>
-    </div>
-</div>
-<!-- Carousel ends -->
-
-<!-- featured section begins -->
-<div class="home__featured-section-wrapper">
-    <section class="container">
-        <h1 class="home__featured-section-header">Featured</h1>
-        <div class="home__featured-container">
-            <!-- feature 1 -->
-            <div class="home__feature">
-                <img alt="Super Nintendo World annual pass" width="720" height="320" class="home__feature-image"
-                     src="./static/home/feature1.png">
-                <div class="home__feature-text-section">
-                    <h5 class="home__text-alert">MASSIVE DISCOUNT</h5>
-                    <h3>Get your 1-up now!</h3>
-                    <p class="p2">
-                        For a limited time only, get your annual pass for a giant discount.
-                        Exclusive offer.
-                    </p>
-                    <a class="link1 link-with-chevron home__learn-more-link" href="/tickets.html">
-                        Learn More
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" height="1.3em" width="1.3em"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- feature 2 -->
-            <div class="home__feature home__feature--reversed">
-                <img alt="Everyone is playing together" width="720" height="320" class="home__feature-image"
-                     src="./static/home/feature2.webp">
-                <div class="home__feature-text-section">
-                    <h3>E for Everyone</h3>
-                    <p class="p2">
-                        We have an experience for everyone. From Waluigi's Famous Sausage's to Yoshi's water park. Find
-                        your fun today.
-                    </p>
-                    <a class="link1 link-with-chevron home__learn-more-link" href="/rides-and-attractions">
-                        Learn More
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" height="1.3em" width="1.3em"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-<!-- featured section ends -->
+</section>
+<!-- Rides & Experiences content ends -->
 
 <!-- Footer begins -->
 <footer>

@@ -1,5 +1,26 @@
+/*
+  import the fonts used by the website
+  These are variable fonts.
+  These were downloaded at https://fonts.google.com/
+*/
+@import url('static/fonts/Inter-VariableFont_slnt,wght.ttf');
+@import url('static/fonts/Nunito-VariableFont_wght.ttf');
+
+/**
+  These are the various CSS variables that will be used
+  throughout the app.
+  1 REM = 16px
+*/
 :root {
+  /*
+    Max width that a container will take.
+    This is to ensure the app does not look stretched on big monitors
+   */
   --max-width: 75rem;
+
+  /*
+    The two heights of the header
+   */
   --header-height: 7.25rem;
   --header-height-mobile: 3.5rem;
 
@@ -37,15 +58,25 @@
   --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
 
+  /*
+    Inter will be used for regular fonts.
+    Nunito will be used for headings
+   */
   --font-inter: 'Inter', sans-serif;
   --font-nunito: 'Nunito', sans-serif;
 }
 
 html {
   box-sizing: border-box;
+  /*
+    This ensures that 1 rem = 16px
+   */
   font-size: 16px;
 }
 
+/*
+  CSS Reset begins
+ */
 *,
 *:before,
 *:after {
@@ -68,6 +99,10 @@ ul {
   font-weight: normal;
 }
 
+/*
+  All headers and p are responsive. They get smaller
+  for smaller devices.
+ */
 h1 {
   font-family: var(--font-inter);
   font-size: var(--font-size-h1);
@@ -149,6 +184,9 @@ h6 {
   }
 }
 
+/*
+  These different p tag classes will be used for regular text
+ */
 .p1 {
   font-size: var(--font-size-p1);
   line-height: 150%;
@@ -202,6 +240,9 @@ h6 {
   }
 }
 
+/*
+  link1 and link2 are used for links and buttons
+ */
 .link1 {
   font-size: var(--font-size-p1);
 }
@@ -230,8 +271,7 @@ h6 {
   }
 }
 
-body,
-#__next {
+body {
   min-height: 100vh;
 }
 
