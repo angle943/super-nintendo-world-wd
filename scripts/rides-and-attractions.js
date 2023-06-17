@@ -11,8 +11,26 @@ const raButtonAttractions = document.getElementById('ra__button-attractions');
 const raButtonDining = document.getElementById('ra__button-dining');
 const raButtonResorts = document.getElementById('ra__button-resorts');
 const raButtonShows = document.getElementById('ra__button-shows');
-const raButtonFilterMobile = document.getElementById('ra__button-filter-mobile');
 const raCardsContainer = document.getElementById('ra__cards-container');
+const raButtonFilterMobile = document.getElementById('ra__button-filter-mobile');
+const raFilterMobileSlider = document.getElementById('ra__filter-slider');
+const raButtonFilterMobileClose = document.getElementById('ra__filter-slider-close-button');
+const raButtonAllMobile = document.getElementById('ra__button-all-mobile');
+const raButtonAttractionsMobile = document.getElementById('ra__button-attractions-mobile');
+const raButtonDiningMobile = document.getElementById('ra__button-dining-mobile');
+const raButtonResortsMobile = document.getElementById('ra__button-resorts-mobile');
+const raButtonShowsMobile = document.getElementById('ra__button-shows-mobile');
+
+/**
+ * Array of each type of filter buttons
+ */
+const raFilterButtons = [
+    [raButtonAll, raButtonAllMobile],
+    [raButtonAttractions, raButtonAttractionsMobile],
+    [raButtonDining, raButtonDiningMobile],
+    [raButtonResorts, raButtonResortsMobile],
+    [raButtonShows, raButtonShowsMobile],
+];
 
 /**
  * Map of various filter options
@@ -88,6 +106,13 @@ const removeAllOnClassesFromButtons = () => {
     raButtonDining.classList.remove('ra__filter--on');
     raButtonResorts.classList.remove('ra__filter--on');
     raButtonShows.classList.remove('ra__filter--on');
+
+    // mobile buttons
+    raButtonAllMobile.classList.remove('ra__filter--on');
+    raButtonAttractionsMobile.classList.remove('ra__filter--on');
+    raButtonDiningMobile.classList.remove('ra__filter--on');
+    raButtonResortsMobile.classList.remove('ra__filter--on');
+    raButtonShowsMobile.classList.remove('ra__filter--on');
 }
 
 /**
@@ -210,93 +235,62 @@ renderFilteredCardsOntoTheDom();
 /**
  * Adds event listeners to the Filter buttons
  */
-raButtonAll.addEventListener('click', () => {
-    // if filter already is selected, do nothing
-    if (raButtonAll.classList.contains('ra__filter--on')) {
-        return;
-    }
+for (const [button, mobileButton] of raFilterButtons) {
+    button.addEventListener('click', () => {
+        // if filter already is selected, do nothing
+        if (button.classList.contains('ra__filter--on')) {
+            return;
+        }
 
-    // remove all on filters
-    const buttonsWithOn = document.getElementsByClassName('ra__filter--on');
-    for (const buttonWithOn of buttonsWithOn) {
-        buttonWithOn.classList.remove('ra__filter--on');
-    }
+        // remove all on filters
+        // spreading it to an array as this array changes as we remove the class
+        const buttonsWithOn = [...document.getElementsByClassName('ra__filter--on')];
+        for (const buttonWithOn of buttonsWithOn) {
+            buttonWithOn.classList.remove('ra__filter--on');
+        }
 
-    // add on class
-    raButtonAll.classList.add('ra__filter--on');
+        // add on class
+        button.classList.add('ra__filter--on');
+        mobileButton.classList.add('ra__filter--on');
 
-    // update card data
-    renderFilteredCardsOntoTheDom();
+        // update card data
+        renderFilteredCardsOntoTheDom();
+    });
+
+    mobileButton.addEventListener('click', () => {
+        // if filter already is selected, do nothing
+        if (mobileButton.classList.contains('ra__filter--on')) {
+            return;
+        }
+
+        // remove all on filters
+        // spreading it to an array as this array changes as we remove the class
+        const buttonsWithOn = [...document.getElementsByClassName('ra__filter--on')];
+        for (const buttonWithOn of buttonsWithOn) {
+            buttonWithOn.classList.remove('ra__filter--on');
+        }
+
+        // add on class
+        button.classList.add('ra__filter--on');
+        mobileButton.classList.add('ra__filter--on');
+
+        // update card data
+        renderFilteredCardsOntoTheDom();
+    });
+}
+
+/**
+ * Add event listener to the mobile filter button
+ */
+raButtonFilterMobile.addEventListener('click', () => {
+    raFilterMobileSlider.showModal();
+    raFilterMobileSlider.classList.add('ra__filter-slider--active');
 });
-raButtonAttractions.addEventListener('click', () => {
-    // if filter already is selected, do nothing
-    if (raButtonAttractions.classList.contains('ra__filter--on')) {
-        return;
-    }
 
-    // remove all on filters
-    const buttonsWithOn = document.getElementsByClassName('ra__filter--on');
-    for (const buttonWithOn of buttonsWithOn) {
-        buttonWithOn.classList.remove('ra__filter--on');
-    }
-
-    // add on class
-    raButtonAttractions.classList.add('ra__filter--on');
-
-    // update card data
-    renderFilteredCardsOntoTheDom();
-});
-raButtonDining.addEventListener('click', () => {
-    // if filter already is selected, do nothing
-    if (raButtonDining.classList.contains('ra__filter--on')) {
-        return;
-    }
-
-    // remove all on filters
-    const buttonsWithOn = document.getElementsByClassName('ra__filter--on');
-    for (const buttonWithOn of buttonsWithOn) {
-        buttonWithOn.classList.remove('ra__filter--on');
-    }
-
-    // add on class
-    raButtonDining.classList.add('ra__filter--on');
-
-    // update card data
-    renderFilteredCardsOntoTheDom();
-});
-raButtonResorts.addEventListener('click', () => {
-    // if filter already is selected, do nothing
-    if (raButtonResorts.classList.contains('ra__filter--on')) {
-        return;
-    }
-
-    // remove all on filters
-    const buttonsWithOn = document.getElementsByClassName('ra__filter--on');
-    for (const buttonWithOn of buttonsWithOn) {
-        buttonWithOn.classList.remove('ra__filter--on');
-    }
-
-    // add on class
-    raButtonResorts.classList.add('ra__filter--on');
-
-    // update card data
-    renderFilteredCardsOntoTheDom();
-});
-raButtonShows.addEventListener('click', () => {
-    // if filter already is selected, do nothing
-    if (raButtonShows.classList.contains('ra__filter--on')) {
-        return;
-    }
-
-    // remove all on filters
-    const buttonsWithOn = document.getElementsByClassName('ra__filter--on');
-    for (const buttonWithOn of buttonsWithOn) {
-        buttonWithOn.classList.remove('ra__filter--on');
-    }
-
-    // add on class
-    raButtonShows.classList.add('ra__filter--on');
-
-    // update card data
-    renderFilteredCardsOntoTheDom();
+/**
+ * Add event listener to the filter close button for mobile
+ */
+raButtonFilterMobileClose.addEventListener('click', () => {
+    raFilterMobileSlider.close();
+    raFilterMobileSlider.classList.remove('ra__filter-slider--active');
 });

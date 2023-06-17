@@ -248,3 +248,60 @@
 .ra__card-more-button-back:hover {
     animation: ra-pulse-white 2s infinite;
 }
+
+/**
+    Mobile viewport slider for filter
+ */
+.ra__filter-slider {
+    background: var(--color-neutral-white);
+    border: none;
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    max-height: unset;
+    max-width: unset;
+    padding: 0;
+    width: 100vw;
+    left: 100vw;
+    transition: left 200ms ease-in-out;
+}
+
+@media only screen and (max-width: 48rem) {
+    .ra__filter-slider {
+        display: flex;
+    }
+}
+
+.ra__filter-slider--active {
+    left: 0;
+}
+
+.ra__filter-slider-header {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ra__filter-close-button {
+    color: var(--color-neutral-900);
+    cursor: pointer;
+    padding: 1rem;
+    transition: all 300ms;
+}
+
+.ra__filter-close-button:hover {
+    color: var(--color-primary);
+}
+
+.ra__filter-slider-content {
+    display: flex;
+    flex: 1;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.ra__btn-filter-slider {
+    display: block;
+}
