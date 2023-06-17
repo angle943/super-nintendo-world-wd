@@ -195,7 +195,7 @@
     position: relative;
     right: -1.5rem;
     top: 0.5rem;
-    transition: all 300ms ease-out;
+    transition: background-color 300ms ease-out;
     width: 1.5rem;
 }
 
