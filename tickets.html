@@ -1,778 +1,1145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Buy your ticket to Super Nintendo Worldco">
-    <link rel="icon" type="image/x-icon" href="./static/favicon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Buy your ticket to Super Nintendo Worldco"
+    />
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico" />
     <title>Tickets - Super Nintendo World!</title>
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="./styles/globals.css">
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/header-small.css">
-    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/header-small.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/menu.css" />
 
     <!-- Page-specific styles -->
-    <link rel="stylesheet" href="./styles/tickets.css">
+    <link rel="stylesheet" href="./styles/tickets.css" />
 
     <!-- Script tags. Uses 'defer' such that it is loaded after the DOM has been rendered -->
 
     <!-- global scripts -->
     <script src="./scripts/header.js" defer></script>
     <script src="./scripts/header-small.js" defer></script>
+    <script src="./scripts/menu.js" defer></script>
 
     <!-- page-specific scripts -->
     <script src="./scripts/tickets.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- header begins  -->
 
-<!-- header begins  -->
+    <!-- header spacer reserves the top section to be white -->
+    <div class="header__spacer"></div>
 
-<!-- header spacer reserves the top section to be white -->
-<div class="header__spacer"></div>
-
-<!-- desktop header begins -->
-<div class="header__backdrop">
-    <header class="container header">
+    <!-- desktop header begins -->
+    <div class="header__backdrop">
+      <header class="container header">
         <div class="header__top-section">
-            <small class="p5">
-                Today's Hours:
-                <time class="header__time" datetime="PT8H">08:00am</time>
-                -
-                <time class="header__time" datetime="PT20H">08:00pm</time>
-            </small>
-            <div class="header__top-right-button-group" role="group" aria-label="top right button group">
-                <!-- Search Button -->
-                <button class="header__top-right-button">
-                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                         stroke-linecap="round" stroke-linejoin="round" height="1.5em" width="1.5em"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
+          <small class="p5">
+            Today's Hours:
+            <time class="header__time" datetime="PT8H">08:00am</time>
+            -
+            <time class="header__time" datetime="PT20H">08:00pm</time>
+          </small>
+          <div
+            class="header__top-right-button-group"
+            role="group"
+            aria-label="top right button group"
+          >
+            <!-- Search Button -->
+            <button class="header__top-right-button">
+              <svg
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                height="1.5em"
+                width="1.5em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
 
-                <!-- Shopping Cart Button -->
-                <button class="header__top-right-button">
-                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                         stroke-linecap="round" stroke-linejoin="round" height="1.5em" width="1.5em"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
-                </button>
+            <!-- Shopping Cart Button -->
+            <button class="header__top-right-button">
+              <svg
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                height="1.5em"
+                width="1.5em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                ></path>
+              </svg>
+            </button>
 
-                <!-- Profile Button -->
-                <button class="header__top-right-button">
-                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                         stroke-linecap="round" stroke-linejoin="round" height="1.5em" width="1.5em"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                </button>
-            </div>
+            <!-- Profile Button -->
+            <button class="header__top-right-button">
+              <svg
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                height="1.5em"
+                width="1.5em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </button>
+          </div>
         </div>
 
         <div class="header__bottom-section">
-            <!-- Empty div because the Logo button is absolutely positioned  -->
-            <div></div>
+          <!-- Empty div because the Logo button is absolutely positioned  -->
+          <div></div>
 
-            <!-- Logo -->
-            <a class="header__logo-link" href="/index.html">
-                <img alt="logo" width="108" height="53" style="color:transparent" src="./static/logo.png">
+          <!-- Logo -->
+          <a class="header__logo-link" href="/index.html">
+            <img
+              alt="logo"
+              width="108"
+              height="53"
+              style="color: transparent"
+              src="./static/logo.png"
+            />
+          </a>
+
+          <!-- Popover nav buttons -->
+          <div class="header__bottom-right-section">
+            <nav class="navbar">
+              <ul class="nav__links">
+                <li data-expand="tickets" class="nav--link">
+                  Tickets & Passes
+                </li>
+                <li data-expand="plan-visit" class="nav--link">
+                  Plan Your Visit
+                </li>
+                <li data-expand="things-to-do" class="nav--link">
+                  Things To Do
+                </li>
+                <li data-expand="shop-now" class="nav--link">Shop Now</li>
+              </ul>
+            </nav>
+
+            <div class="tip"></div>
+
+            <section class="header__expandMenu">
+              <div class="menu__container">
+                <!-- popover for Ticket & Passes -->
+                <div id="tickets">
+                  <div class="sub__menu">
+                    <ul class="subMenu__items">
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Purchase Tickets
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            VIP Pass Info
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Military discounts
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="sub__menu">
+                    <div class="subMenu--imageFeaturedWrapper">
+                      <img
+                        src="./static/header/ticket-and-passes-1.png"
+                        alt=""
+                        class="subMenu--imageFeatured"
+                      />
+                    </div>
+                    <h3 class="titleFeatured">2023 VIP Pass</h3>
+                    <p class="descFeatured">
+                      Dreams do come true. Enjoy unlimited visits to Super
+                      Nintendo World for this year with the 2023 VIP pass.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- popover for Plan Your Visit -->
+                <div id="plan-visit">
+                  <div class="sub__menu">
+                    <ul class="subMenu__items">
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Park Map & Location
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Calendar & Hours
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Lodging Options
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            FAQ
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="sub__menu">
+                    <div class="subMenu--imageFeaturedWrapper">
+                      <img
+                        src="./static/header/plan-your-visit-1.webp"
+                        alt=""
+                        class="subMenu--imageFeatured"
+                      />
+                    </div>
+                    <h3 class="titleFeatured">Get your map</h3>
+                    <p class="descFeatured">
+                      It's dangerous to go alone! Plan ahead by getting a copy
+                      of the park's map.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- popover for Things to Do -->
+                <div id="things-to-do">
+                  <div class="sub__menu">
+                    <ul class="subMenu__items">
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Rides & Attractions
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Dining
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Events
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Celebrations
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="sub__menu">
+                    <div class="subMenu--imageFeaturedWrapper">
+                      <img
+                        src="./static/header/things-to-do-1.jpg"
+                        alt=""
+                        class="subMenu--imageFeatured"
+                      />
+                    </div>
+                    <h3 class="titleFeatured">All new world 1-1</h3>
+                    <p class="descFeatured">
+                      Come experience the charming world of World 1-1 this
+                      summer!
+                    </p>
+                  </div>
+                </div>
+
+                <!-- popover for Shop Now -->
+                <div id="shop-now">
+                  <div class="sub__menu">
+                    <ul class="subMenu__items">
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            New Arrivals
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Custom T-Shirts
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            Gift Cards
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="subMenu--item">
+                        <div class="label__container">
+                          <div class="label">
+                            All Park Products
+                            <img
+                              class="right--arrow"
+                              src="./static/header/right-arrow.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="sub__menu">
+                    <div class="subMenu--imageFeaturedWrapper">
+                      <img
+                        src="./static/header/shop-now-1.png"
+                        alt=""
+                        class="subMenu--imageFeatured"
+                      />
+                    </div>
+                    <h3 class="titleFeatured">Check out the catalogue</h3>
+                    <p class="descFeatured">
+                      We have brand new Mario merchandise. Browse our catalog
+                      before it is sold out!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Buy Now Button -->
+            <a class="link2 buy-now-button" href="/tickets.html">
+              <span>buy now!</span>
             </a>
-
-            <!-- Popover nav buttons -->
-            <div class="header__bottom-right-section">
-                <nav class="header__popover-button-container">
-
-                    <!-- Tickets & Passes -->
-                    <button class="p3 popover-button" id="popover-button-ticket-and-passes">
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" height="1.5em" width="1.5em"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                        </svg>
-                        <span>Tickets & Passes</span>
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" class="popover-button__chevron"
-                             height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-
-                    <!-- Plan Your Visit -->
-                    <button class="p3 popover-button" id="popover-button-plan-your-visit">
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" height="1.5em" width="1.5em"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        <span>Plan Your Visit</span>
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" class="popover-button__chevron"
-                             height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-
-                    <!-- Things to Do -->
-                    <button class="p3 popover-button" id="popover-button-things-to-do">
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" height="1.5em" width="1.5em"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                        </svg>
-                        <span>Things to Do</span>
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" class="popover-button__chevron"
-                             height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-
-                    <!-- Shop Now -->
-                    <button class="p3 popover-button" id="popover-button-shop-now">
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" height="1.5em" width="1.5em"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                            <rect x="2" y="7" width="20" height="5"></rect>
-                            <line x1="12" y1="22" x2="12" y2="7"></line>
-                            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-                        </svg>
-                        <span>Shop Now</span>
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                             stroke-linecap="round" stroke-linejoin="round" class="popover-button__chevron"
-                             height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                </nav>
-
-                <!-- Buy Now Button -->
-                <a class="link2 buy-now-button" href="/tickets.html">
-                    <span>buy now!</span>
-                </a>
-            </div>
+          </div>
         </div>
-    </header>
-</div>
-
-<!-- popover for Ticket & Passes -->
-<dialog class="popover" id="popover-ticket-and-passes">
-    <div class="popover-left__container">
-        <h5 class="popover-left__nav-group-title">Tickets & Passes</h5>
-        <nav class="popover-left__nav-group-links">
-            <a class="link2 popover-left__nav-group-link" href="/tickets.html">Purchase Tickets</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">VIP Pass Info</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Military Discounts</a>
-        </nav>
+      </header>
     </div>
-    <form class="popover-right__container" method="dialog">
-        <button class="popover-right__close-button">
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                 stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-        <img alt="happy toad who has a VIP pass" width="320" height="112" class="popover-right__image"
-             style="color: transparent;" src="./static/header/ticket-and-passes-1.png">
-        <a class="link1 link-with-chevron popover-right__link" href="/tickets.html">
-            <span>2023 VIP Pass</span>
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                 stroke-linejoin="round" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </a>
-        <p class="p3">
-            Dreams do come true. Enjoy unlimited visits to Super Nintendo World for this year with the 2023 VIP
-            pass.
-        </p>
-    </form>
-</dialog>
+    <!-- Desktop header ends -->
 
-<!-- popover for Plan Your Visit -->
-<dialog class="popover" id="popover-plan-your-visit">
-    <div class="popover-left__container">
-        <h5 class="popover-left__nav-group-title">Plan Your Visit</h5>
-        <nav class="popover-left__nav-group-links">
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Park Map & Location</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Calendar & Hours</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Lodging Options</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Vacation Packages</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Wedding Amenities</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">FAQ</a>
-        </nav>
-    </div>
-    <form class="popover-right__container" method="dialog">
-        <button class="popover-right__close-button">
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                 stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-        <img alt="Mario and Luigi planning for visit" width="320" height="112" class="popover-right__image"
-             style="color: transparent;" src="./static/header/plan-your-visit-1.webp">
-        <a class="link1 link-with-chevron popover-right__link">
-            <span>Get your map</span>
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                 stroke-linejoin="round" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </a>
-        <p class="p3">
-            It's dangerous to go alone! Plan ahead by getting a copy of the park's map.
-        </p>
-    </form>
-</dialog>
-
-<!-- popover for Things to Do -->
-<dialog class="popover" id="popover-things-to-do">
-    <div class="popover-left__container">
-        <h5 class="popover-left__nav-group-title">Things to Do</h5>
-        <nav class="popover-left__nav-group-links">
-            <a class="link2 popover-left__nav-group-link" href="/rides-and-attractions.html">Rides & Attractions</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Dining</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Events</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Celebrations</a>
-        </nav>
-    </div>
-    <form class="popover-right__container" method="dialog">
-        <button class="popover-right__close-button">
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                 stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-        <img alt="Photo of the park" width="320" height="112" class="popover-right__image"
-             style="color: transparent;" src="./static/header/things-to-do-1.jpg">
-        <a class="link1 link-with-chevron popover-right__link" href="/rides-and-attractions.html">
-            <span>All new world 1-1</span>
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                 stroke-linejoin="round" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </a>
-        <p class="p3">
-            Come experience the charming world of World 1-1 this summer!
-        </p>
-    </form>
-</dialog>
-
-<!-- popover for Shop Now -->
-<dialog class="popover" id="popover-shop-now">
-    <div class="popover-left__container">
-        <h5 class="popover-left__nav-group-title">Shop Now</h5>
-        <nav class="popover-left__nav-group-links">
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">New Arrivals</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Custom T-Shirts</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Gift Cards</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">All Park Products</a>
-            <a class="link2 popover-left__nav-group-link popover-left__nav-group-link--fake">Mario Products</a>
-        </nav>
-    </div>
-    <form class="popover-right__container" method="dialog">
-        <button class="popover-right__close-button">
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                 stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-        <img alt="Mario and Luigi with gifts" width="320" height="112" class="popover-right__image"
-             style="color: transparent;" src="./static/header/shop-now-1.png">
-        <a class="link1 link-with-chevron popover-right__link">
-            <span>Check out the catalogue</span>
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                 stroke-linejoin="round" height="1.3em" width="1.3em" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </a>
-        <p class="p3">
-            We have brand-new Mario merchandise. Browse our catalog before it is sold out!
-        </p>
-    </form>
-</dialog>
-<!-- Desktop header ends -->
-
-<!-- Small header begins -->
-<header class="header-small">
-    <!-- Empty div required because logo button is absolutely positioned -->
-    <div></div>
-    <a class="header-small__logo-link" href="/index.html">
-        <img alt="logo" width="120" height="59" style="color:transparent" src="./static/logo.png">
-    </a>
-    <button class="header-small__menu-button" id="header-small__menu-button">
-        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-             stroke-linejoin="round" height="1.875em" width="1.875em" xmlns="http://www.w3.org/2000/svg">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
+    <!-- Small header begins -->
+    <header class="header-small">
+      <!-- Empty div required because logo button is absolutely positioned -->
+      <div></div>
+      <a class="header-small__logo-link" href="/index.html">
+        <img
+          alt="logo"
+          width="120"
+          height="59"
+          style="color: transparent"
+          src="./static/logo.png"
+        />
+      </a>
+      <button class="header-small__menu-button" id="header-small__menu-button">
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          height="1.875em"
+          width="1.875em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
-    </button>
-</header>
+      </button>
+    </header>
 
-<!-- Slider for small header menu -->
-<dialog class="header-small__slider" id="slider">
-    <div class="header-small__slider-header">
-        <img class="header-small__slider-logo" alt="logo" width="120" height="59" style="color:transparent"
-             src="./static/logo.png">
-        <button class="header-small__menu-button header-small__slider-close-button"
-                id="header-small__slider-close-button">
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                 stroke-linejoin="round" height="1.875em" width="1.875em" xmlns="http://www.w3.org/2000/svg">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
+    <!-- Slider for small header menu -->
+    <dialog class="header-small__slider" id="slider">
+      <div class="header-small__slider-header">
+        <img
+          class="header-small__slider-logo"
+          alt="logo"
+          width="120"
+          height="59"
+          style="color: transparent"
+          src="./static/logo.png"
+        />
+        <button
+          class="header-small__menu-button header-small__slider-close-button"
+          id="header-small__slider-close-button"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            height="1.875em"
+            width="1.875em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
-    </div>
-    <div class="header-small__time-open-container">
+      </div>
+      <div class="header-small__time-open-container">
         <small class="p5">
-            Today's Hours:
-            <time class="header-small__time" datetime="PT8H">
-                08:00am
-            </time>
-            -
-            <time class="header-small__time" datetime="PT20H">
-                08:00pm
-            </time>
+          Today's Hours:
+          <time class="header-small__time" datetime="PT8H"> 08:00am </time>
+          -
+          <time class="header-small__time" datetime="PT20H"> 08:00pm </time>
         </small>
-    </div>
+      </div>
 
-    <!-- Tickets & Passes Menu group -->
-    <button class="header-small__menu-group" id="header-small__tickets-and-passes-button">
+      <!-- Tickets & Passes Menu group -->
+      <button
+        class="header-small__menu-group"
+        id="header-small__tickets-and-passes-button"
+      >
         Tickets & Passes
 
-        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-             stroke-linejoin="round" class="header-small__chevron" height="1.5em" width="1.5em"
-             xmlns="http://www.w3.org/2000/svg">
-            <polyline points="6 9 12 15 18 9"></polyline>
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="header-small__chevron"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
-    </button>
-    <div class="header-small__nav-group-container">
+      </button>
+      <div class="header-small__nav-group-container">
         <nav class="header-small__nav-group">
-            <a class="link2 header-small__nav-group-link" href="/tickets.html">
-                Purchase Tickets
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                VIP Pass Info
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Military Discounts
-            </a>
+          <a class="link2 header-small__nav-group-link" href="/tickets.html">
+            Purchase Tickets
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            VIP Pass Info
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Military Discounts
+          </a>
         </nav>
-    </div>
+      </div>
 
-    <!-- Plan Your Visit Menu group -->
-    <button class="header-small__menu-group" id="header-small__plan-your-visit-button">
+      <!-- Plan Your Visit Menu group -->
+      <button
+        class="header-small__menu-group"
+        id="header-small__plan-your-visit-button"
+      >
         Plan Your Visit
 
-        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-             stroke-linejoin="round" class="header-small__chevron" height="1.5em" width="1.5em"
-             xmlns="http://www.w3.org/2000/svg">
-            <polyline points="6 9 12 15 18 9"></polyline>
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="header-small__chevron"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
-    </button>
-    <div class="header-small__nav-group-container">
+      </button>
+      <div class="header-small__nav-group-container">
         <nav class="header-small__nav-group">
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Park Map & Location
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Calendar & Hours
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Lodging Options
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Vacation Packages
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Wedding Amenities
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                FAQ
-            </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Park Map & Location
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Calendar & Hours
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Lodging Options
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Vacation Packages
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Wedding Amenities
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            FAQ
+          </a>
         </nav>
-    </div>
+      </div>
 
-    <!-- Things to Do Menu group -->
-    <button class="header-small__menu-group" id="header-small__things-to-do-button">
+      <!-- Things to Do Menu group -->
+      <button
+        class="header-small__menu-group"
+        id="header-small__things-to-do-button"
+      >
         Things to Do
 
-        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-             stroke-linejoin="round" class="header-small__chevron" height="1.5em" width="1.5em"
-             xmlns="http://www.w3.org/2000/svg">
-            <polyline points="6 9 12 15 18 9"></polyline>
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="header-small__chevron"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
-    </button>
-    <div class="header-small__nav-group-container">
+      </button>
+      <div class="header-small__nav-group-container">
         <nav class="header-small__nav-group">
-            <a class="link2 header-small__nav-group-link" href="/rides-and-attractions.html">
-                Rides & Attractions
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Dining
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Events
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Celebrations
-            </a>
+          <a
+            class="link2 header-small__nav-group-link"
+            href="/rides-and-attractions.html"
+          >
+            Rides & Attractions
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Dining
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Events
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Celebrations
+          </a>
         </nav>
-    </div>
+      </div>
 
-    <!-- Shop Now Menu group -->
-    <button class="header-small__menu-group" id="header-small__shop-now-button">
+      <!-- Shop Now Menu group -->
+      <button
+        class="header-small__menu-group"
+        id="header-small__shop-now-button"
+      >
         Shop Now
 
-        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-             stroke-linejoin="round" class="header-small__chevron" height="1.5em" width="1.5em"
-             xmlns="http://www.w3.org/2000/svg">
-            <polyline points="6 9 12 15 18 9"></polyline>
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="header-small__chevron"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
-    </button>
-    <div class="header-small__nav-group-container">
+      </button>
+      <div class="header-small__nav-group-container">
         <nav class="header-small__nav-group">
-            <a class="link2 header-small__nav-group-link" href="/tickets.html">
-                New Arrivals
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Custom T-Shirts
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Gift Cards
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                All Park Products
-            </a>
-            <a class="link2 header-small__nav-group-link header-small__nav-group-link--fake">
-                Mario Merchandise
-            </a>
+          <a class="link2 header-small__nav-group-link" href="/tickets.html">
+            New Arrivals
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Custom T-Shirts
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Gift Cards
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            All Park Products
+          </a>
+          <a
+            class="link2 header-small__nav-group-link header-small__nav-group-link--fake"
+          >
+            Mario Merchandise
+          </a>
         </nav>
-    </div>
+      </div>
+    </dialog>
+    <!-- Small header ends -->
+    <!-- header ends -->
 
-</dialog>
-<!-- Small header ends -->
-<!-- header ends -->
-
-<!-- Tickets hero begins -->
-<div class="tickets__hero-backdrop">
-    <div class="container tickets__hero-text-section">
-        <h1 class="tickets__hero-text">
-            Memorial Day Sale!
-        </h1>
+    <!-- Tickets hero begins -->
+    <div class="tickets__hero-backdrop">
+      <div class="container tickets__hero-text-section">
+        <h1 class="tickets__hero-text">Memorial Day Sale!</h1>
         <p class="p1 tickets__hero-text">
-            We honor our real life heroes. To celebrate this year's Memorial Day, buy a ticket for you and your family
-            at a discount, exclusive only on this site! Come celebrate our heroes with us.
+          We honor our real life heroes. To celebrate this year's Memorial Day,
+          buy a ticket for you and your family at a discount, exclusive only on
+          this site! Come celebrate our heroes with us.
         </p>
+      </div>
     </div>
-</div>
-<!-- Tickets hero ends -->
+    <!-- Tickets hero ends -->
 
-<!-- Tickets form begins -->
-<div class="tickets__form-wrapper">
-    <div class="container">
-
+    <!-- Tickets form begins -->
+    <div class="tickets__form-wrapper">
+      <div class="container">
         <!-- Select Tickets -->
         <div class="tickets__form-section" id="tickets__section-select-ticket">
-            <h2 class="tickets__form-title">
-                1. Select Tickets
-            </h2>
-            <div class="tickets__tickets-container">
-
-                <!-- Daily Ticket button -->
-                <div class="tickets__ticket-card" id="tickets__daily-ticket" tabindex="0">
-                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                         stroke-linejoin="round" class="tickets__check-icon"
-                         height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <div class="tickets__ticket-card-header">
-                        <h5 class="tickets__ticket-card-title">
-                            Single Daily Ticket
-                        </h5>
-                        <p class="p1 tickets__ticket-card-discount">
-                            <s class="p2">$109</s> $89
-                        </p>
-                    </div>
-                    <p class="p2">
-                        You deserve a magical day. Enjoy all non-VIP-exclusive rides and
-                        attractions at Super Nintendo World with this day pass.
-                    </p>
-                </div>
-
-                <!-- VIP Pass button -->
-                <div class="tickets__ticket-card" id="tickets__vip-ticket" tabindex="0">
-                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                         stroke-linejoin="round" class="tickets__check-icon"
-                         height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <div class="tickets__ticket-card-header">
-                        <h5 class="tickets__ticket-card-title">
-                            2023 VIP Pass
-                        </h5>
-                        <p class="p1 tickets__ticket-card-discount">
-                            <s class="p2">$259</s> $209
-                        </p>
-                    </div>
-                    <p class="p2">
-                        Can't get enough of Super Nintendo World? Sign up for the annual VIP pass! Experience faster
-                        wait times and get exclusive offers & perks.
-                    </p>
-                </div>
-
+          <h2 class="tickets__form-title">1. Select Tickets</h2>
+          <div class="tickets__tickets-container">
+            <!-- Daily Ticket button -->
+            <div
+              class="tickets__ticket-card"
+              id="tickets__daily-ticket"
+              tabindex="0"
+            >
+              <svg
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="tickets__check-icon"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <div class="tickets__ticket-card-header">
+                <h5 class="tickets__ticket-card-title">Single Daily Ticket</h5>
+                <p class="p1 tickets__ticket-card-discount">
+                  <s class="p2">$109</s> $89
+                </p>
+              </div>
+              <p class="p2">
+                You deserve a magical day. Enjoy all non-VIP-exclusive rides and
+                attractions at Super Nintendo World with this day pass.
+              </p>
             </div>
+
+            <!-- VIP Pass button -->
+            <div
+              class="tickets__ticket-card"
+              id="tickets__vip-ticket"
+              tabindex="0"
+            >
+              <svg
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="tickets__check-icon"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <div class="tickets__ticket-card-header">
+                <h5 class="tickets__ticket-card-title">2023 VIP Pass</h5>
+                <p class="p1 tickets__ticket-card-discount">
+                  <s class="p2">$259</s> $209
+                </p>
+              </div>
+              <p class="p2">
+                Can't get enough of Super Nintendo World? Sign up for the annual
+                VIP pass! Experience faster wait times and get exclusive offers
+                & perks.
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Select Number of Tickets -->
-        <div class="tickets__form-section tickets__form-section--hidden" id="tickets__section-number-of-tickets">
-            <h2 class="tickets__form-title">
-                2. Select the Number of Tickets
-            </h2>
-            <p class="p2 tickets__form-description">
-                Please note that the park is free for children under the age of 3.
-            </p>
-            <div class="tickets__number-of-tickets-form-container">
-                <!-- Ages 3-9 -->
-                <div class="tickets__number-of-tickets-set">
-                    <label class="p1">
-                        Ages 3-9
-                    </label>
-                    <div class="tickets__number-of-tickets-input-set" id="tickets__AgesThreeToNine">
-                        <button class="tickets__number-of-tickets-button tickets__number-of-tickets-button--disabled">
-                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                                 stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="8" y1="12" x2="16" y2="12"></line>
-                            </svg>
-                        </button>
-                        <h2 class="tickets__number-of-tickets-number">0</h2>
-                        <button class="tickets__number-of-tickets-button">
-                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                                 stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="8" x2="12" y2="16"></line>
-                                <line x1="8" y1="12" x2="16" y2="12"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Ages 10+ -->
-                <div class="tickets__number-of-tickets-set">
-                    <label class="p1">
-                        Ages 10+
-                    </label>
-                    <div class="tickets__number-of-tickets-input-set" id="tickets__AgesTenPlus">
-                        <button class="tickets__number-of-tickets-button tickets__number-of-tickets-button--disabled">
-                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                                 stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="8" y1="12" x2="16" y2="12"></line>
-                            </svg>
-                        </button>
-                        <h2 class="tickets__number-of-tickets-number">0</h2>
-                        <button class="tickets__number-of-tickets-button">
-                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
-                                 stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="8" x2="12" y2="16"></line>
-                                <line x1="8" y1="12" x2="16" y2="12"></line>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+        <div
+          class="tickets__form-section tickets__form-section--hidden"
+          id="tickets__section-number-of-tickets"
+        >
+          <h2 class="tickets__form-title">2. Select the Number of Tickets</h2>
+          <p class="p2 tickets__form-description">
+            Please note that the park is free for children under the age of 3.
+          </p>
+          <div class="tickets__number-of-tickets-form-container">
+            <!-- Ages 3-9 -->
+            <div class="tickets__number-of-tickets-set">
+              <label class="p1"> Ages 3-9 </label>
+              <div
+                class="tickets__number-of-tickets-input-set"
+                id="tickets__AgesThreeToNine"
+              >
+                <button
+                  class="tickets__number-of-tickets-button tickets__number-of-tickets-button--disabled"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </button>
+                <h2 class="tickets__number-of-tickets-number">0</h2>
+                <button class="tickets__number-of-tickets-button">
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
             </div>
+
+            <!-- Ages 10+ -->
+            <div class="tickets__number-of-tickets-set">
+              <label class="p1"> Ages 10+ </label>
+              <div
+                class="tickets__number-of-tickets-input-set"
+                id="tickets__AgesTenPlus"
+              >
+                <button
+                  class="tickets__number-of-tickets-button tickets__number-of-tickets-button--disabled"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </button>
+                <h2 class="tickets__number-of-tickets-number">0</h2>
+                <button class="tickets__number-of-tickets-button">
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Continue button -->
-        <div class="tickets__form-section tickets__form-section--hidden" id="tickets__section-continue">
-            <div class="tickets__continue-button-container">
-                <button class="link2 tickets__continue-button">
-                    Continue
-                </button>
-            </div>
+        <div
+          class="tickets__form-section tickets__form-section--hidden"
+          id="tickets__section-continue"
+        >
+          <div class="tickets__continue-button-container">
+            <button class="link2 tickets__continue-button">Continue</button>
+          </div>
         </div>
-
+      </div>
     </div>
-</div>
-<!-- Tickets form ends -->
+    <!-- Tickets form ends -->
 
-
-<!-- Footer begins -->
-<footer>
-    <div class="footer__social-section-wrapper">
+    <!-- Footer begins -->
+    <footer>
+      <div class="footer__social-section-wrapper">
         <div class="container footer__social-section">
-            <img alt="Super Nintendo World logo" width="122" height="60" src="./static/logo.png">
-            <nav class="footer__social-link-container">
-                <a class="footer__social-link">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
-                         width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
-                    </svg>
-                </a>
-                <a class="footer__social-link">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
-                         width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-                    </svg>
-                </a>
-                <a class="footer__social-link">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
-                         width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
-                    </svg>
-                </a>
-                <a class="footer__social-link">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em"
-                         width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
-                    </svg>
-                </a>
-                <a class="footer__social-link">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
-                         width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path>
-                    </svg>
-                </a>
-            </nav>
+          <img
+            alt="Super Nintendo World logo"
+            width="122"
+            height="60"
+            src="./static/logo.png"
+          />
+          <nav class="footer__social-link-container">
+            <a class="footer__social-link">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                ></path>
+              </svg>
+            </a>
+            <a class="footer__social-link">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                ></path>
+              </svg>
+            </a>
+            <a class="footer__social-link">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                ></path>
+              </svg>
+            </a>
+            <a class="footer__social-link">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 576 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+                ></path>
+              </svg>
+            </a>
+            <a class="footer__social-link">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
+                ></path>
+              </svg>
+            </a>
+          </nav>
         </div>
-    </div>
+      </div>
 
-    <div class="footer__nav-section-wrapper">
+      <div class="footer__nav-section-wrapper">
         <div class="container footer__nav-section">
-
-            <!-- Tickets & Passes -->
-            <div class="footer__nav-group">
-                <h5 class="footer__nav-group-title">
-                    Tickets & Passes
-                </h5>
-                <nav class="footer__nav-group-links">
-                    <a href="/tickets.html" class="link2 footer__nav-group-link">
-                        Purchase Tickets
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        VIP Pass Info
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Military Discounts
-                    </a>
-                </nav>
-            </div>
-
-            <!-- Plan Your Visit -->
-            <div class="footer__nav-group">
-                <h5 class="footer__nav-group-title">
-                    Plan Your Visit
-                </h5>
-                <nav class="footer__nav-group-links">
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Park Map & Location
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Calendar & Hours
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Lodging Options
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Vacation Packages
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Wedding Amenities
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        FAQ
-                    </a>
-                </nav>
-            </div>
-
-            <!-- Things to Do -->
-            <div class="footer__nav-group">
-                <h5 class="footer__nav-group-title">
-                    Things to Do
-                </h5>
-                <nav class="footer__nav-group-links">
-                    <a href="/rides-and-attractions.html" class="link2 footer__nav-group-link">
-                        Rides & Attractions
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Dining
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Events
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Celebrations
-                    </a>
-                </nav>
-            </div>
-
-            <!-- Shop Now -->
-            <div class="footer__nav-group">
-                <h5 class="footer__nav-group-title">
-                    Shop Now
-                </h5>
-                <nav class="footer__nav-group-links">
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        New Arrivals
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Custom T-Shirts
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Gift Cards
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        All Park Products
-                    </a>
-                    <a class="link2 footer__nav-group-link footer__nav-group-link--fake">
-                        Mario Merchandise
-                    </a>
-                </nav>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer__legal-section-wrapper">
-        <div class="container footer__legal-section">
-            <span class="p5">
-                Made by Team 63 for University Of London's Web Dev course. Spring 2023.
-            </span>
-            <nav class="footer__legal-links">
-                <a class="link2 footer__legal-link">
-                    Contact us
-                </a>
-                <a class="link2 footer__legal-link">
-                    Website feedback
-                </a>
-                <a class="link2 footer__legal-link">
-                    Change region
-                </a>
+          <!-- Tickets & Passes -->
+          <div class="footer__nav-group">
+            <h5 class="footer__nav-group-title">Tickets & Passes</h5>
+            <nav class="footer__nav-group-links">
+              <a href="/tickets.html" class="link2 footer__nav-group-link">
+                Purchase Tickets
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                VIP Pass Info
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Military Discounts
+              </a>
             </nav>
+          </div>
+
+          <!-- Plan Your Visit -->
+          <div class="footer__nav-group">
+            <h5 class="footer__nav-group-title">Plan Your Visit</h5>
+            <nav class="footer__nav-group-links">
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Park Map & Location
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Calendar & Hours
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Lodging Options
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Vacation Packages
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Wedding Amenities
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                FAQ
+              </a>
+            </nav>
+          </div>
+
+          <!-- Things to Do -->
+          <div class="footer__nav-group">
+            <h5 class="footer__nav-group-title">Things to Do</h5>
+            <nav class="footer__nav-group-links">
+              <a
+                href="/rides-and-attractions.html"
+                class="link2 footer__nav-group-link"
+              >
+                Rides & Attractions
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Dining
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Events
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Celebrations
+              </a>
+            </nav>
+          </div>
+
+          <!-- Shop Now -->
+          <div class="footer__nav-group">
+            <h5 class="footer__nav-group-title">Shop Now</h5>
+            <nav class="footer__nav-group-links">
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                New Arrivals
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Custom T-Shirts
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Gift Cards
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                All Park Products
+              </a>
+              <a
+                class="link2 footer__nav-group-link footer__nav-group-link--fake"
+              >
+                Mario Merchandise
+              </a>
+            </nav>
+          </div>
         </div>
-    </div>
-</footer>
-<!-- Footer ends -->
-</body>
+      </div>
+
+      <div class="footer__legal-section-wrapper">
+        <div class="container footer__legal-section">
+          <span class="p5">
+            Made by Team 63 for University Of London's Web Dev course. Spring
+            2023.
+          </span>
+          <nav class="footer__legal-links">
+            <a class="link2 footer__legal-link"> Contact us </a>
+            <a class="link2 footer__legal-link"> Website feedback </a>
+            <a class="link2 footer__legal-link"> Change region </a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends -->
+  </body>
 </html>
