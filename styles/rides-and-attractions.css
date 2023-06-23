@@ -2,6 +2,9 @@
     styles exclusively used for the rides & attractions page
 */
 
+/*
+    animation used to make button "pulse" red when hovered
+ */
 @keyframes ra-pulse-red {
     0% {
         transform: scale(0.95);
@@ -18,6 +21,9 @@
     }
 }
 
+/*
+    animation used to make button "pulse" white when hovered
+ */
 @keyframes ra-pulse-white {
     0% {
         transform: scale(0.95);
@@ -34,6 +40,9 @@
     }
 }
 
+/*
+    The hero image on top of page
+ */
 .ra__hero-backdrop {
     background-image: linear-gradient(
             90deg,
@@ -87,6 +96,9 @@
     }
 }
 
+/*
+    Styling for the filter buttons begin
+ */
 .ra__p-filter {
     width: 9rem;
 }
@@ -130,6 +142,10 @@
     color: var(--color-neutral-white);
 }
 
+/*
+    Styling for the Rides and Attraction "Cards" begin. These are DOM elements that is generated via javascript
+    in scripts/rides-and-attractions.js
+ */
 .ra__cards-container {
     align-items: stretch;
     display: grid;
