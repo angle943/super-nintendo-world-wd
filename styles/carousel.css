@@ -59,6 +59,9 @@
     width: 100vw;
 }
 
+/*
+    Carousel will have a gradient overlay on top of the image such that texts within it are easier to read
+ */
 .carousel__gradient {
     align-items: flex-end;
     background: linear-gradient(
@@ -85,6 +88,10 @@
     }
 }
 
+/*
+    Each carousel slides have different images. It is controlled by the class names that
+    javascript will add to the DOM element
+ */
 .carousel__image--0 {
     background-image: url('/static/home/carousel0.jpg');
 }
@@ -149,6 +156,9 @@
     color: var(--color-neutral-white);
 }
 
+/*
+    Carousel left/right buttons
+ */
 .carousel__chevron-button {
     align-items: center;
     color: var(--color-neutral-white);
@@ -184,6 +194,9 @@
     }
 }
 
+/*
+    Carousel dots in the bottom that also act as buttons
+*/
 .carousel__dot-container {
     position: absolute;
     display: flex;

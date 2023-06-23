@@ -1,6 +1,10 @@
 /**
     styles exclusively used for the home (index) page
 */
+
+/*
+    Styling for the "Featured" section beginse
+ */
 .home__featured-section-wrapper {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -23,6 +27,9 @@
     }
 }
 
+/*
+    Each feature will alternate between being normal and `--reversed`. Reversed puts the image to the right
+ */
 .home__feature {
     display: grid;
     grid-template-columns: 30rem 1fr;
