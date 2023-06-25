@@ -207,7 +207,13 @@
     transform: rotateY(180deg);
     padding: 2rem;
     display: flex;
+    gap: 0.75rem;
+    flex-direction: column;
     height: 100%;
+}
+
+.ra__card-head-back {
+    color: var(--color-neutral-white);
 }
 
 .ra__card-back > p {

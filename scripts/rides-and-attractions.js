@@ -142,6 +142,7 @@ const createCardDomElement = (card) => {
 
     const cardTitle = document.createElement('h5');
     cardTitle.classList.add('ra__card-head');
+    cardTitle.textContent = card.title;
     cardInfo.appendChild(cardTitle);
 
     const cardDescription = document.createElement('p');
@@ -175,6 +176,11 @@ const createCardDomElement = (card) => {
 
     const cardBack = document.createElement('div');
     cardBack.classList.add('ra__card-back');
+
+    const cardTitleBack = document.createElement('h5');
+    cardTitleBack.classList.add('ra__card-head-back');
+    cardTitleBack.textContent = card.title;
+    cardBack.appendChild(cardTitleBack);
 
     const cardBackMore = document.createElement('p');
     cardBackMore.classList.add('p1');
