@@ -131,6 +131,12 @@
     visibility: hidden;
 }
 
+@media only screen and (max-width: 65rem) {
+    .popover {
+        display: none;
+    }
+}
+
 .popover[open] {
     top: var(--header-height);
     visibility: unset;
