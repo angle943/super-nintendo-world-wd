@@ -277,7 +277,6 @@
 .ra__filter-slider {
     background: var(--color-neutral-white);
     border: none;
-    display: none;
     flex-direction: column;
     height: 100vh;
     margin: 0;
@@ -287,12 +286,6 @@
     width: 100vw;
     left: 100vw;
     transition: left 200ms ease-in-out;
-}
-
-@media only screen and (max-width: 48rem) {
-    .ra__filter-slider {
-        display: flex;
-    }
 }
 
 .ra__filter-slider--active {
