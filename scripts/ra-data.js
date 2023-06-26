@@ -24,6 +24,16 @@ const raData = [
         category: "Shows",
     },
     {
+        title: "Brinstar",
+        description: "Experience the life as Samus in this terrifying world of Brinstar",
+        more: "TO BE COMPLETED...",
+        img: {
+            src: "./static/rides-and-attractions/brinstar.jpg",
+            alt: "Attraction image",
+        },
+        category: "Attractions",
+    },
+    {
         title: "Donkey Kong's Barrel Blast",
         description: "Swing through a thrilling barrel coaster ride with Donkey Kong, navigating obstacles and daring jumps.",
         more: "TO BE COMPLETED...",
@@ -135,6 +145,18 @@ const raData = [
         more: "TO BE COMPLETED...",
         img: {
             src: "./static/rides-and-attractions/Luigis-burgers.jpeg",
+            alt: "Attraction image",
+        },
+
+        category: "Dining",
+    },
+    {
+        title: "Mama Mia Bakery",
+        description:
+          "You deserve some cake from Princess Peach after all the adventuring! Come and get some cake and other desserts that will make you say Mama Mia!",
+        more: "TO BE COMPLETED...",
+        img: {
+            src: "./static/rides-and-attractions/mama-mia-bakery.jpeg",
             alt: "Attraction image",
         },
 
@@ -279,5 +301,17 @@ const raData = [
         },
 
         category: "Dining",
+    },
+    {
+        title: "World 1-1",
+        description:
+          "Start your new adventure as Mario in this world 1-1. Don't worry about losing your life, this is the first level!",
+        more: "TO BE COMPLETED...",
+        img: {
+            src: "./static/rides-and-attractions/world-1-1.png",
+            alt: "Attraction image",
+        },
+
+        category: "Attractions",
     },
 ];
