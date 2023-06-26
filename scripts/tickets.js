@@ -5,6 +5,7 @@
 /**
  * DOM Elements
  */
+const ticketsSectionSelectTicket = document.getElementById('tickets__section-select-ticket');
 const ticketsSectionNumberOfTickets = document.getElementById('tickets__section-number-of-tickets');
 const ticketsSectionContinue = document.getElementById('tickets__section-continue');
 const ticketsDailyTicket = document.getElementById('tickets__daily-ticket');
@@ -52,8 +53,10 @@ ticketsDailyTicket.addEventListener('click', () => {
     ticketsDailyTicket.classList.add('tickets__ticket-card--selected');
     handleTicketTypeCheckmarkToggle(ticketsDailyTicket);
 
-    // show the next section
-    handleMakeVisibleNumberOfTicketsSection();
+    // show the next section if it is not visible
+    if (ticketsSectionNumberOfTickets.classList.contains('tickets__form-section--hidden')) {
+      handleMakeVisibleNumberOfTicketsSection();
+    }
 });
 ticketsVipTicket.addEventListener('click', () => {
 
@@ -75,9 +78,21 @@ ticketsVipTicket.addEventListener('click', () => {
     ticketsVipTicket.classList.add('tickets__ticket-card--selected');
     handleTicketTypeCheckmarkToggle(ticketsVipTicket);
 
-    // show the next section
-    handleMakeVisibleNumberOfTicketsSection();
+    // show the next section if it is not visible
+    if (ticketsSectionNumberOfTickets.classList.contains('tickets__form-section--hidden')) {
+      handleMakeVisibleNumberOfTicketsSection();
+    }
 });
+
+/**
+ * Handle smooth scrolling to the DOM element
+ * Takes in a DOM element as an argument
+ */
+const scrollToTheElement = (el) => {
+    const top = el.offsetTop;
+    // subtracting 100 so that we account for the header
+    window.scrollTo({ top: top - 100, behavior: 'smooth'});
+}
 
 /**
  * Makes the Number of Tickets Section visible
@@ -85,6 +100,7 @@ ticketsVipTicket.addEventListener('click', () => {
 const handleMakeVisibleNumberOfTicketsSection = () => {
     ticketsSectionNumberOfTickets.classList.remove('tickets__form-section--hidden');
     ticketsSectionNumberOfTickets.classList.add('tickets__form-section--animate');
+    scrollToTheElement(ticketsSectionNumberOfTickets);
 }
 
 /**
@@ -93,7 +109,13 @@ const handleMakeVisibleNumberOfTicketsSection = () => {
 const handleHideNumberOfTicketsSection = () => {
     ticketsSectionNumberOfTickets.classList.add('tickets__form-section--hidden');
     ticketsSectionNumberOfTickets.classList.remove('tickets__form-section--animate');
-    handleHideContinueSection();
+    handleHideContinueSection(true);
+
+    // reset the number of tickets selected
+    ticketsThreeToNineNumberText.textContent = "0";
+    ticketsTenPlusNumberText.textContent = "0";
+
+    scrollToTheElement(ticketsSectionSelectTicket);
 }
 
 /**
@@ -106,10 +128,14 @@ const handleMakeVisibleContinueSection = () => {
 
 /**
  * Hides the Continue Section
+ * optionally takes in a parameter to not scroll
  */
-const handleHideContinueSection = () => {
+const handleHideContinueSection = (doNotScroll = false) => {
     ticketsSectionContinue.classList.add('tickets__form-section--hidden');
     ticketsSectionContinue.classList.remove('tickets__form-section--animate');
+    if (!doNotScroll) {
+      scrollToTheElement(ticketsSectionNumberOfTickets);
+    }
 }
 
 /**
