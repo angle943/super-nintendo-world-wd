@@ -12,6 +12,9 @@ const ticketsDailyTicket = document.getElementById('tickets__daily-ticket');
 const ticketsVipTicket = document.getElementById('tickets__vip-ticket');
 const ticketsAgesThreeToNine = document.getElementById('tickets__AgesThreeToNine');
 const ticketsAgesTenPlus = document.getElementById('tickets__AgesTenPlus');
+const ticketsContinueButton = document.getElementById('tickets__continue-button');
+const ticketsContinueDialog = document.getElementById('tickets__dialog');
+const ticketsContinueDialogCloseButton = document.getElementById('tickets__dialog-close-button');
 const ticketsThreeToNineMinusButton = ticketsAgesThreeToNine.children[0];
 const ticketsThreeToNineNumberText = ticketsAgesThreeToNine.children[1];
 const ticketsThreeToNinePlusButton = ticketsAgesThreeToNine.children[2];
@@ -241,3 +244,12 @@ ticketsTenPlusPlusButton.addEventListener('click', () => {
     }
 });
 
+/**
+ * Adds event listeners to the Continue button and the dialog close button
+ */
+ticketsContinueButton.addEventListener('click', () => {
+    ticketsContinueDialog.showModal();
+});
+ticketsContinueDialogCloseButton.addEventListener('click', () => {
+    ticketsContinueDialog.close();
+})

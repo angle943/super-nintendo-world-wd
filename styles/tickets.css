@@ -289,3 +289,44 @@
         flex: 1;
     }
 }
+
+/**
+    Styling for the Continue button dialog
+ */
+.tickets__dialog {
+    background: var(--color-neutral-white);
+    border: none;
+}
+
+.tickets__dialog-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.tickets__dialog-title {
+    color: var(--color-primary);
+    margin-left: 1rem;
+}
+
+.tickets__dialog-close-button {
+    color: var(--color-neutral-900);
+    cursor: pointer;
+    padding: 1rem;
+    transition: all 300ms;
+}
+
+.tickets__dialog-close-button:hover {
+    color: var(--color-primary);
+}
+
+.tickets__dialog-content {
+    padding: 2rem;
+}
+
+@media only screen and (max-width: 77rem) {
+    .tickets__dialog-content {
+        padding: 1rem;
+    }
+}
