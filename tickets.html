@@ -903,21 +903,42 @@
         </div>
 
         <!-- Continue button -->
-        <div
-          class="tickets__form-section tickets__form-section--hidden"
-          id="tickets__section-continue"
-        >
-          <div class="tickets__continue-button-container">
-            <button class="link2 tickets__continue-button">Continue</button>
-          </div>
+        <div class="tickets__form-section tickets__form-section--hidden" id="tickets__section-continue">
+            <div class="tickets__continue-button-container">
+                <button class="link2 tickets__continue-button" id="tickets__continue-button">
+                    Continue
+                </button>
+            </div>
         </div>
       </div>
     </div>
     <!-- Tickets form ends -->
 
-    <!-- Footer begins -->
-    <footer>
-      <div class="footer__social-section-wrapper">
+<!-- Tickets Continue button dialog begins -->
+<dialog class="tickets__dialog" id="tickets__dialog">
+    <div class="tickets__dialog-header">
+        <h5 class="tickets__dialog-title">
+            Oops!
+        </h5>
+        <button class="tickets__dialog-close-button"
+                id="tickets__dialog-close-button">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                 stroke-linejoin="round" height="1.875em" width="1.875em" xmlns="http://www.w3.org/2000/svg">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+    <div class="tickets__dialog-content">
+        <p>Oops, this feature has not been implemented yet. Please stay tuned!</p>
+    </div>
+</dialog>
+<!-- Tickets Continue button dialog ends -->
+
+
+<!-- Footer begins -->
+<footer>
+    <div class="footer__social-section-wrapper">
         <div class="container footer__social-section">
           <img
             alt="Super Nintendo World logo"
