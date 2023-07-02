@@ -43,19 +43,6 @@
   transform-origin: 100% 50%;
 }
 
-.arrow--sideUp {
-  transform: rotate(45deg);
-}
-
-.arrow--sideDown {
-  transform: rotate(-45deg);
-}
-
-.arrow--hoverLine {
-  width: 12px;
-  transform: scale(0);
-}
-
 .arrow,
 .line {
   transition: transform 100ms ease-in;
@@ -73,7 +60,7 @@
   transform: scale(1);
 }
 
-.tip {
+.nav__tip {
   width: 1.25rem;
   height: 1.25rem;
   background-color: #fff;
@@ -128,10 +115,6 @@
   grid-template-columns: repeat(2, 380px);
 }
 
-.item--one {
-  grid-column: span 2;
-}
-
 .subMenu__items {
   list-style: none;
 }
@@ -141,32 +124,32 @@
   margin-bottom: 1.75rem;
 }
 
-.titleFeatured {
+.subMenu__titleFeatured {
   font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 
-.descFeatured {
+.subMenu__descFeatured {
   font-size: 0.9rem;
   color: rgb(83, 83, 83);
   transform: translateY(-3px);
   transition: color 100ms ease;
 }
 
-.subMenu--item {
+.subMenu__item {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-.subMenu--imageFeatured {
+.subMenu__imageFeatured {
   width: 100%;
   max-height: 100px;
   object-fit: cover;
   border-radius: 0.5rem;
 }
 
-.subMenu--imageFeaturedWrapper {
+.subMenu__imageFeaturedWrapper {
   width: 100%;
   overflow: hidden;
   padding-bottom: 1rem;
@@ -189,7 +172,7 @@
   transition: color 100ms ease;
 }
 
-.subMenu--item + .subMenu--item {
+.subMenu__item + .subMenu__item {
   margin-top: 1.5rem;
 }
 
@@ -203,11 +186,11 @@
   transition: transform 150ms ease-in-out;
 }
 
-.subMenu--item:hover .right--arrow {
+.subMenu__item:hover .right--arrow {
   transform: translateY(2px) scale(1);
 }
 
-.subMenu--item:hover .label {
+.subMenu__item:hover .label {
   color: red;
 }
 
@@ -231,7 +214,7 @@
   opacity: 0.5;
 }
 
-.new--expand {
+.menu_expand {
   transition: opacity 150ms ease, transform 150ms ease-in;
 }
 
@@ -239,36 +222,8 @@
   transition: none;
 }
 
-.sec--menu .subMenu--item + .subMenu--item {
+.sec--menu .subMenu__item + .subMenu__item {
   margin-top: 0.5rem;
-}
-
-.sec__title {
-  color: grey;
-  margin-bottom: 0.65rem;
-}
-
-.sec__links {
-  list-style: none;
-  padding: 0 0 0.2rem 0;
-}
-
-.sec__links > li {
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 400;
-}
-
-.sec__links--container {
-  padding-left: 2rem;
-}
-
-.more__info {
-  grid-column: span 2;
-}
-
-.more__links {
-  padding-left: 1.5rem;
 }
 
 a {

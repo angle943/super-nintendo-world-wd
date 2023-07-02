@@ -6,11 +6,11 @@ const handleMouseEnter = (e) => {
   navsVisited += 1;
 
   if (navsVisited === 1) {
-    expandMenu.classList.add("new--expand");
+    expandMenu.classList.add("menu_expand");
     menus.forEach((menu) => menu.classList.add("first"));
     indicator.classList.add("first");
   } else {
-    expandMenu.classList.remove("new--expand");
+    expandMenu.classList.remove("menu_expand");
     menus.forEach((menu) => menu.classList.remove("first"));
     indicator.classList.remove("first");
   }
@@ -77,7 +77,7 @@ const forceInitialState = () => {
 const expandMenu = document.querySelector(".header__expandMenu");
 const menus = expandMenu.querySelectorAll(".menu__container > *");
 const navLinks = document.querySelectorAll(".nav--link");
-const indicator = document.querySelector(".tip");
+const indicator = document.querySelector(".nav__tip");
 let isMouseOnMenu = false;
 let currentNav;
 let navsVisited = 0;
