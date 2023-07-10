@@ -1,3 +1,8 @@
+/**
+ * Script for the menu on the top nav. Adds event listeners to the top nav for desktop
+ */
+
+// mouseEnter event handler for each of the nav links
 const handleMouseEnter = (e) => {
     if (!e.target.dataset.expand) {
         return;
@@ -57,6 +62,7 @@ const handleMouseEnter = (e) => {
     expandMenu.classList.add("expand");
 };
 
+// mouse leave event handler for each of the nav links
 const handleMouseLeave = (e) => {
     if (isMouseOnMenu || e.y > 50) {
         return;
@@ -65,6 +71,7 @@ const handleMouseLeave = (e) => {
     forceInitialState();
 };
 
+// "reset" the nav state
 const forceInitialState = () => {
     expandMenu.classList.remove("expand", "active");
     currentNav.classList.remove("hover");
@@ -82,11 +89,7 @@ let isMouseOnMenu = false;
 let currentNav;
 let navsVisited = 0;
 
-const {
-    height: menuHeight,
-    width: menuWidth,
-} = expandMenu.getBoundingClientRect();
-
+// add event listeners to the navLinks and expandMenu
 navLinks.forEach((navLink) => {
     navLink.addEventListener("mouseenter", handleMouseEnter);
 });

@@ -1,3 +1,7 @@
+/**
+    style used for the desktop version of the top nav menu
+*/
+
 .nav__links {
     display: flex;
     list-style: none;

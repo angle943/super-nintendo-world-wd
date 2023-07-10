@@ -275,7 +275,7 @@
     justify-content: center;
     padding: 1em 2em;
     position: relative;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .buy-now-button::before {
