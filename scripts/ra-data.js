@@ -2,6 +2,11 @@
  * Data for Rides and Attractions
  */
 const raData = [
+    /*
+        Wonho, F. Lee. (2023). Toadstool Cafe [Photograph]. Eater. Retrieved July 14, 2023,
+        from
+        https://la.eater.com/2023/1/9/23545048/toadstool-cafe-universal-studios-hollywood-super-mario-brothers
+     */
     {
         title: "Bowser's BBQ Bonanza",
         description: "Feast on fiery, savory barbecue favorites overseen by Bowser himself, offering a villainously delicious dining experience.",
@@ -10,9 +15,12 @@ const raData = [
             src: "./static/rides-and-attractions/bowsers-bbq.jpeg",
             alt: "Attraction image",
         },
-
         category: "Dining",
     },
+    /*
+        Roméo A. (2021). Mario Kart: Koopa's Challenge [Photograph]. Unsplash. Retrieved
+        July 14, 2023, from https://unsplash.com/photos/aGm3un7MQDc
+     */
     {
         title: "Bowser's Comedy Castle",
         description: "Laugh out loud at Bowser's hilarious stand-up comedy routine, where the villainous Koopa King showcases his unexpectedly comedic side.",
@@ -23,6 +31,10 @@ const raData = [
         },
         category: "Shows",
     },
+    /*
+        Romeo, Jonathan. (2016). Samus [Digital Art]. Reddit. Retrieved July 14, 2023, from
+        https://www.reddit.com/r/ImaginaryTechnology/comments/3ztxj2/samus_by_romeo_jonathan_wenjr/
+     */
     {
         title: "Brinstar",
         description: "Experience the life as Samus in this terrifying world of Brinstar",
@@ -33,6 +45,11 @@ const raData = [
         },
         category: "Attractions",
     },
+    /*
+        Universal Pictures. (2023). The Super Mario Bros. Movie [Film Screenshot]. Svg.
+        Retrieved July 14, 2023, from
+        https://www.svg.com/1271007/how-new-york-20-foot-tall-donkey-kong-arcade-machine-made-possible/
+     */
     {
         title: "Donkey Kong's Barrel Blast",
         description: "Swing through a thrilling barrel coaster ride with Donkey Kong, navigating obstacles and daring jumps.",
@@ -43,6 +60,10 @@ const raData = [
         },
         category: "Attractions",
     },
+    /*
+        Unknown. (2021). Donkey Kong Drums [Digital Image]. Screen Rant. Retrieved July 14, 2023,
+        from https://screenrant.com/call-duty-vanguard-donkey-kong-bongos-drum-kills/
+     */
     {
         title: "Donkey Kong's Drumbeat Rhythm Show",
         description: "Feel the rhythm and get your groove on as Donkey Kong and his crew take center stage, delivering a lively and entertaining drumbeat performance that will have you dancing in your seat.",
@@ -53,6 +74,10 @@ const raData = [
         },
         category: "Shows",
     },
+    /*
+        Universal Pictures. (2023). The Super Mario Bros. Movie [Film Screenshot]. Mario Wiki. Retrieved July 14, 2023,
+        from https://www.mariowiki.com/Great_Ring_of_Kong#/media/File:TSMBM_DK_laughing_at_Cat_Mario.jpg
+     */
     {
         title: "Donkey Kong's Jungle Jam",
         description: "Get ready for a rhythm-infused extravaganza as Donkey Kong and his crew showcase their groovy moves in an energetic dance and percussion performance, creating an unforgettable spectacle of beats and entertainment.",
@@ -63,17 +88,11 @@ const raData = [
         },
         category: "Shows",
     },
-    {
-        title: "Donkey Kong's Jungle Hideaway",
-        description:
-          "Escape to the untamed jungles of Donkey Kong's tropical hideaway, where you can swing on vines, discover hidden treasures, and experience a wild and thrilling retreat.",
-        more: "Suitable for all ages. Adult supervision required.",
-        img: {
-            src: "./static/rides-and-attractions/Kong-resort.jpeg",
-            alt: "Attraction image",
-        },
-        category: "Resorts",
-    },
+    /*
+        Nintendo. (2020). Hyrule Warriors: Age of Calamity [Digital Image]. Nintendo.
+        Retrieved on July 14, 2023, from
+        https://www.nintendo.com/store/products/hyrule-warriors-age-of-calamity-110729/
+     */
     {
         title: "Hyrule Highlands Resort",
         description:
@@ -85,6 +104,10 @@ const raData = [
         },
         category: "Resorts",
     },
+    /*
+        Nintendo. (2022). Kirby’s Dream Buffet [Digital Image]. Ign. Retrieved on July 14, 2023,from
+        https://www.ign.com/articles/kirbys-dream-buffet-is-a-fall-guys-style-party-game-coming-to-switch
+     */
     {
         title: "Kirby's Dream Buffet",
         description:
@@ -97,6 +120,10 @@ const raData = [
 
         category: "Dining",
     },
+    /*
+        Animist. (2021). Kirby’s Victory Dance. [Animation]. Twitter. Retrieved on July 14, 2023, from
+        https://twitter.com/shinohara_kenta/status/1376127694094491650?s=19
+     */
     {
         title: "Kirby's Dreamland Dance Party",
         description: "Join Kirby and friends in an energetic dance party, grooving to catchy tunes and showcasing your best moves in a lively and colorful atmosphere.",
@@ -107,6 +134,10 @@ const raData = [
         },
         category: "Shows",
     },
+    /*
+        Nintendo. (2015). Kirby and the Rainbow Curse. [Digital Image]. Nintendo Life. Retrieved on July 14, 2023, from
+        https://www.nintendolife.com/games/wiiu/kirby_and_the_rainbow_curse
+     */
     {
         title: "Kirby's Flying Spectacular",
         description: "Immerse yourself in a whimsical journey through Dreamland with Kirby and his friends in a magical stage show filled with acrobatics, music, and captivating performances, leaving the audience enchanted and filled with joy.",
@@ -117,17 +148,10 @@ const raData = [
         },
         category: "Shows",
     },
-    {
-        title: "Koopa Troopa's Beachside Retreat",
-        description:
-          "Relax and enjoy a playful beachside getaway at Koopa Troopa's tropical resort, complete with thrilling activities and surprises.",
-        more: "Suitable for all ages. Adult supervision required.",
-        img: {
-            src: "./static/rides-and-attractions/koopa-resort.jpeg",
-            alt: "Attraction image",
-        },
-        category: "Resorts",
-    },
+    /*
+        Universal Studios. (n.d.). Mario Cart, Koopa’s Challenge [Digital Image]. Universal Studios Japan. Retrieved July 14, 2023, from
+        https://super-nintendo-world.usj.co.jp/en/us/mariokart
+     */
     {
         title: "Koopa's Crazy Kart Rally",
         description: "Join the Koopa Troop in a fast-paced go-kart race against Mario and friends, complete with power-ups and exciting shortcuts.",
@@ -138,6 +162,10 @@ const raData = [
         },
         category: "Attractions",
     },
+    /*
+        Wonho, F. Lee. (2023). Toadstool Cafe [Photograph]. Eater. Retrieved July 14, 2023, from
+        https://la.eater.com/2023/2/14/23588227/best-dishes-toadstool-cafe-restaurant-review-super-nintendo-world-los-angeles
+     */
     {
         title: "Luigi's Burgers",
         description:
@@ -150,6 +178,10 @@ const raData = [
 
         category: "Dining",
     },
+    /*
+        Nintendo. (n.d.). Princess Peach [Digital Image]. Pintrest. Retrieved July 14, 2023,
+        from https://www.pinterest.com/pin/611504455651199394/
+     */
     {
         title: "Mama Mia Bakery",
         description:
@@ -159,9 +191,12 @@ const raData = [
             src: "./static/rides-and-attractions/mama-mia-bakery.jpeg",
             alt: "Attraction image",
         },
-
         category: "Dining",
     },
+    /*
+        Universal Pictures. (2023). The Super Mario Bros. Movie [Film Screenshot]. Polygon. Retrieved July 14, 2023,
+        from https://www.polygon.com/23677014/super-mario-bros-movie-gross-box-office-opening-weekend
+     */
     {
         title: "Mario and Friends' Super Spectacular Showdown",
         description: "Get ready for an electrifying stage show as Mario, Luigi, Princess Peach, and their pals display their extraordinary talents in a high-energy performance filled with stunts, music, and excitement.",
@@ -172,6 +207,10 @@ const raData = [
         },
         category: "Shows",
     },
+    /*
+        Rivers, Jay. (2009). Mario & Luigi - 239 - Yummy Pizza [Photograph]. Flickr. Retrieved July 14, 2023,
+        from https://www.flickr.com/photos/revengingangel/3392027038/
+     */
     {
         title: "Mario's Pizza Paradise",
         description:
@@ -184,6 +223,10 @@ const raData = [
 
         category: "Dining",
     },
+    /*
+        Unknown. (n.d.). Mushroom Inn. [Photograph]. Hotels. Retrieved July 14, 2023, from
+        https://www.hotels.com/ho1545400608/mushrooms-inn-semporna-malaysia/?pwaDialogNested=media-gallery&pwaThumbnailDialog=thumbnail-gallery
+     */
     {
         title: "Mushroom Kingdom Inn",
         description:
@@ -195,6 +238,10 @@ const raData = [
         },
         category: "Resorts",
     },
+    /*
+        Nintendo. (2021). Pokémon Unite [Screenshot]. Kotaku. Retrieved July 14, 2023, from
+        https://kotaku.com/pokemon-unite-survey-suggests-huge-changes-could-be-com-1847754725
+     */
     {
         title: "Pokémon Battle Extravaganza",
         description: "Witness an epic display of Pokémon battles featuring trainers and their Pokémon engaging in electrifying duels, showcasing their skills and teamwork.",
@@ -205,6 +252,10 @@ const raData = [
         },
         category: "Shows",
     },
+    /*
+        Universal Studios. (2023). Princess Peach’s Castle [Photograph]. Universal Studios Hollywood. Retrieved July 14, 2023,
+        from https://ktla.com/wp-content/uploads/sites/4/2023/01/Princess-Peach-Castle.jpg
+     */
     {
         title: "Princess Peach's Castle Escape",
         description: "Help Princess Peach escape from Bowser's clutches in an interactive and immersive castle-themed experience.",
@@ -215,6 +266,10 @@ const raData = [
         },
         category: "Attractions",
     },
+    /*
+        Universal Studios. (n.d.). Mario Cart, Bowser’s Challenge [Digital Image]. Universal Studios Hollywood. Retrieved July 14, 2023, from
+        https://www.universalstudioshollywood.com/web/en/us/things-to-do/rides-and-attractions/mario-kart-bowsers-challenge
+     */
     {
         title: "Star Power Roller Coaster",
         description: "Feel the rush as you ride a high-speed roller coaster through a galaxy filled with sparkling stars and cosmic wonders.",
@@ -225,17 +280,10 @@ const raData = [
         },
         category: "Attractions",
     },
-    {
-        title: "Star Road Lodge",
-        description:
-          "Journey to the cosmos and unwind at Star Road Lodge, a celestial retreat where you can stargaze from your balcony and enjoy luxurious amenities inspired by the wonders of the universe.",
-        more: "Suitable for all ages. Adult supervision required.",
-        img: {
-            src: "./static/rides-and-attractions/Star-resort.jpeg",
-            alt: "Attraction image",
-        },
-        category: "Resorts",
-    },
+    /*
+        Unknown. (2017). E3 Expo 2017: Nintendo. [Photograph]. AES Creative. Retrieved July 14, 2023, from
+        https://www.aescreative.com/ts-nintendo-e3-zelda-breathofthewild
+     */
     {
         title: "The Legend of Zelda",
         description: "Ocarina of Time Live: Immerse yourself in the enchanting melodies of Hyrule through a captivating live orchestral performance, showcasing the timeless music of The Legend of Zelda: Ocarina of Time.",
@@ -246,6 +294,10 @@ const raData = [
         },
         category: "Shows",
     },
+    /*
+        Nintendo. (2020). Paper Mario: The Origami King. [Digital Image]. The Gamer. Retrieved July 14, 2023, from
+        https://www.thegamer.com/gaming-detail-paper-mario-the-origami-kings-shogun-studios-is-based-on-a-real-world-japanese-theme-park/
+     */
     {
         title: "Toadstool Terrace Retreat",
         description:
@@ -257,6 +309,10 @@ const raData = [
         },
         category: "Resorts",
     },
+    /*
+        Universal Pictures. (2023). The Super Mario Bros. Movie [Film Screenshot]. Twitter. Retrieved July 14, 2023,
+        from https://twitter.com/supermariomovie/status/1577297788513173506/photo/1
+     */
     {
         title: "Toad's Mushroom Munchies",
         description:
@@ -269,6 +325,10 @@ const raData = [
 
         category: "Dining",
     },
+    /*
+        Nintendo. (2021). Mario Cart Tour: Yoshi Tour [Digital Image]. Nintendo. Retrieved July 14, 2023, from
+        https://www.nintendo.com/whatsnew/roll-into-egg-siting-fun-with-the-yoshi-tour/
+     */
     {
         title: "Yoshi's Epic Egg Hunt",
         description: "Embark on an egg-citing adventure with Yoshi, searching for hidden eggs and encountering delightful surprises along the way.",
@@ -279,17 +339,10 @@ const raData = [
         },
         category: "Attractions",
     },
-    {
-        title: "Yoshi's Island Oasis",
-        description:
-          "Indulge in a tranquil and tropical paradise at Yoshi's Island Oasis, where vibrant flora, serene waterfalls, and friendly Yoshi companions create a peaceful and rejuvenating getaway.",
-        more: "Suitable for all ages. Adult supervision required.",
-        img: {
-            src: "./static/rides-and-attractions/yoshi-resort.jpeg",
-            alt: "Attraction image",
-        },
-        category: "Resorts",
-    },
+    /*
+        Nilghe, Chris. (2021). Yoshi’s Lassi [Photograph]. TDR Explorer. Retrieved July 14, 2023, from
+        https://tdrexplorer.com/wp-content/uploads/2021/02/super-nintendo-world-yoshis-snack-island-5-scaled.jpeg
+     */
     {
         title: "Yoshi's Snack-a-Saurus Cafe",
         description:
@@ -302,6 +355,10 @@ const raData = [
 
         category: "Dining",
     },
+    /*
+        Universal Studios. (2021). Super Nintendo World Theme Park. [Photograph]. Universal Studios Japan. Retrieved July 14, 2023,
+        from https://concreteplayground.com/auckland/news-2/take-a-sneak-peek-at-the-new-mario-kart-ride-coming-to-japans-multi-level-super-nintendo-theme-park
+     */
     {
         title: "World 1-1",
         description:
